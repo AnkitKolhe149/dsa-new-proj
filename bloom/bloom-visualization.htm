@@ -267,4 +267,19 @@
                 <p>Search calculations for value <strong>${inputValue}</strong>:</p>
                 <p>Hash 1: Position ${h1} - <strong>${bitArray[h1] === 1 ? "Match (1)" : "No Match (0)"}</strong></p>
                 <p>Hash 2: Position ${h2} - <strong>${bitArray[h2] === 1 ? "Match (1)" : "No Match (0)"}</strong></p>
-                <p>Hash 3: Position ${h3} - <strong>${bitArray[h3] === 1 ? "Match (1)" : "No Match (0)"}</strong
+                <p>Hash 3: Position ${h3} - <strong>${bitArray[h3] === 1 ? "Match (1)" : "No Match (0)"}</strong></p>
+            <p>Result: <strong>${searchResult ? "Probably Present" : "Not Present"}</strong></p>
+        `;
+        }
+    }
+
+    function resetHashTable() {
+        bitArray = new Array(size).fill(0);
+        displayBitArray();
+        document.getElementById("hashCalculations").innerHTML = '';
+        document.getElementById("tableStatus").textContent = `Hash table reset. Enter a value to insert or search.`;
+    }
+    </script>
+</body>
+</html>
+
