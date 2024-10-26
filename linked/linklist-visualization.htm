@@ -7,86 +7,62 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+      background-color: #f0f2f5;
       color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
       margin: 0;
+      padding: 20px;
     }
     h2 {
-      font-size: 2em;
       color: #333;
-      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #controls {
+      margin: 20px 0;
+      text-align: center;
+    }
+    #controls input, #controls button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    #controls button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #controls button:hover {
+      background-color: #45a049;
     }
     .node {
       display: inline-block;
-      padding: 15px 25px;
-      margin: 15px 10px;
-      background: linear-gradient(135deg, #4CAF50, #66BB6A);
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #4CAF50;
       color: white;
       font-weight: bold;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 5px;
+      transition: transform 0.2s;
     }
     .node:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
     .arrow {
       display: inline-block;
       margin: 0 10px;
-      font-size: 24px;
-      color: #555;
+      font-size: 20px;
+      color: #333;
     }
-    #controls {
-      margin: 20px auto;
-      padding: 25px;
-      background: white;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-    #controls input[type="number"] {
-      padding: 12px;
-      width: calc(40% - 20px);
-      margin: 8px 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: border-color 0.2s ease;
-    }
-    #controls input[type="number"]:focus {
-      border-color: #4CAF50;
-      outline: none;
-    }
-    #controls button {
-      padding: 12px 25px;
-      margin: 8px 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    #controls button:hover {
-      background-color: #45a049;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
-    #linkedList {
-      margin-top: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 90%;
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -102,8 +78,10 @@
   <button onclick="addNodeAtPosition()">Add Node at Position</button>
 </div>
 <div id="linkedList"></div>
+<div class="error-message" id="errorMessage"></div>
 
 <script>
+  // Node class
   class Node {
     constructor(value) {
       this.value = value;
@@ -111,11 +89,14 @@
     }
   }
 
+  // LinkedList class
   class LinkedList {
     constructor() {
       this.head = null;
+      this.size = 0; // Keep track of the list size
     }
 
+    // Insert a new node at the end
     append(value) {
       const newNode = new Node(value);
       if (!this.head) {
@@ -127,84 +108,116 @@
         }
         current.next = newNode;
       }
+      this.size++;
       this.render();
     }
 
+    // Insert a new node at the beginning
     prepend(value) {
       const newNode = new Node(value);
       newNode.next = this.head;
       this.head = newNode;
+      this.size++;
       this.render();
     }
 
+    // Insert a node at a specific position
     insertAtPosition(value, position) {
       const newNode = new Node(value);
-      if (position <= 1 || !this.head) {
+      if (position < 1 || position > this.size + 1) {
+        this.showError(Invalid position! Please enter a position between 1 and ${this.size + 1}.);
+        return;
+      }
+
+      if (position === 1) {
         this.prepend(value);
         return;
       }
+
       let current = this.head;
       let count = 1;
-      while (current && count < position - 1) {
+      while (count < position - 1 && current) {
         current = current.next;
         count++;
       }
-      if (current) {
-        newNode.next = current.next;
-        current.next = newNode;
-      } else {
-        alert("Position out of bounds. Adding at the end.");
-        this.append(value);
-      }
+
+      newNode.next = current.next;
+      current.next = newNode;
+      this.size++;
       this.render();
     }
 
+    // Render the linked list to HTML
     render() {
       const container = document.getElementById("linkedList");
       container.innerHTML = "";
       let current = this.head;
       while (current) {
+        // Create node element
         const nodeElem = document.createElement("div");
         nodeElem.className = "node";
         nodeElem.innerText = current.value;
         container.appendChild(nodeElem);
 
+        // Add arrow if there's a next node
         if (current.next) {
           const arrowElem = document.createElement("span");
           arrowElem.className = "arrow";
           arrowElem.innerHTML = "&#8594;";
           container.appendChild(arrowElem);
         }
+
         current = current.next;
       }
+      this.clearError();
+    }
+
+    // Display error message
+    showError(message) {
+      const errorMessageElem = document.getElementById("errorMessage");
+      errorMessageElem.innerText = message;
+    }
+
+    // Clear error message
+    clearError() {
+      const errorMessageElem = document.getElementById("errorMessage");
+      errorMessageElem.innerText = "";
     }
   }
 
+  // Initialize linked list
   const linkedList = new LinkedList();
 
+  // Functions to add nodes at specific positions
   function addNodeAtEnd() {
     const value = document.getElementById("nodeValue").value;
     if (value !== "") {
-      linkedList.append(value);
+      linkedList.append(parseInt(value));
       document.getElementById("nodeValue").value = "";
+    } else {
+      linkedList.showError("Please enter a value to add a node.");
     }
   }
 
   function addNodeAtFront() {
     const value = document.getElementById("nodeValue").value;
     if (value !== "") {
-      linkedList.prepend(value);
+      linkedList.prepend(parseInt(value));
       document.getElementById("nodeValue").value = "";
+    } else {
+      linkedList.showError("Please enter a value to add a node.");
     }
   }
 
   function addNodeAtPosition() {
     const value = document.getElementById("nodeValue").value;
-    const position = parseInt(document.getElementById("nodePosition").value);
-    if (value !== "" && !isNaN(position)) {
-      linkedList.insertAtPosition(value, position);
+    const position = document.getElementById("nodePosition").value;
+    if (value !== "" && position !== "") {
+      linkedList.insertAtPosition(parseInt(value), parseInt(position));
       document.getElementById("nodeValue").value = "";
       document.getElementById("nodePosition").value = "";
+    } else {
+      linkedList.showError("Please enter both a value and a position to add a node.");
     }
   }
 </script>
