@@ -5,22 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Linked List Visualization</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 2em;
+      color: #333;
+      margin-top: 20px;
+    }
     .node {
       display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background-color: #4CAF50;
+      padding: 15px 25px;
+      margin: 15px 10px;
+      background: linear-gradient(135deg, #4CAF50, #66BB6A);
       color: white;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .node:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
     .arrow {
       display: inline-block;
       margin: 0 10px;
-      font-size: 20px;
+      font-size: 24px;
+      color: #555;
     }
     #controls {
-      margin: 20px 0;
+      margin: 20px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+    #controls input[type="number"] {
+      padding: 12px;
+      width: calc(40% - 20px);
+      margin: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s ease;
+    }
+    #controls input[type="number"]:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    #controls button {
+      padding: 12px 25px;
+      margin: 8px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    #controls button:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    #linkedList {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 90%;
     }
   </style>
 </head>
@@ -38,7 +104,6 @@
 <div id="linkedList"></div>
 
 <script>
-  // Node class
   class Node {
     constructor(value) {
       this.value = value;
@@ -46,13 +111,11 @@
     }
   }
 
-  // LinkedList class
   class LinkedList {
     constructor() {
       this.head = null;
     }
 
-    // Insert a new node at the end
     append(value) {
       const newNode = new Node(value);
       if (!this.head) {
@@ -67,7 +130,6 @@
       this.render();
     }
 
-    // Insert a new node at the beginning
     prepend(value) {
       const newNode = new Node(value);
       newNode.next = this.head;
@@ -75,7 +137,6 @@
       this.render();
     }
 
-    // Insert a node at a specific position
     insertAtPosition(value, position) {
       const newNode = new Node(value);
       if (position <= 1 || !this.head) {
@@ -98,67 +159,18 @@
       this.render();
     }
 
-    // Render the linked list to HTML
     render() {
       const container = document.getElementById("linkedList");
       container.innerHTML = "";
       let current = this.head;
       while (current) {
-        // Create node element
         const nodeElem = document.createElement("div");
         nodeElem.className = "node";
         nodeElem.innerText = current.value;
         container.appendChild(nodeElem);
 
-        // Add arrow if there's a next node
         if (current.next) {
           const arrowElem = document.createElement("span");
           arrowElem.className = "arrow";
           arrowElem.innerHTML = "&#8594;";
-          container.appendChild(arrowElem);
-        }
-
-        current = current.next;
-      }
-    }
-  }
-
-  // Initialize linked list
-  const linkedList = new LinkedList();
-
-  // Functions to add nodes at specific positions
-  function addNodeAtEnd() {
-    const value = document.getElementById("nodeValue").value;
-    if (value !== "") {
-      linkedList.append(parseInt(value));
-      document.getElementById("nodeValue").value = "";
-    } else {
-      alert("Please enter a value to add a node.");
-    }
-  }
-
-  function addNodeAtFront() {
-    const value = document.getElementById("nodeValue").value;
-    if (value !== "") {
-      linkedList.prepend(parseInt(value));
-      document.getElementById("nodeValue").value = "";
-    } else {
-      alert("Please enter a value to add a node.");
-    }
-  }
-
-  function addNodeAtPosition() {
-    const value = document.getElementById("nodeValue").value;
-    const position = document.getElementById("nodePosition").value;
-    if (value !== "" && position !== "") {
-      linkedList.insertAtPosition(parseInt(value), parseInt(position));
-      document.getElementById("nodeValue").value = "";
-      document.getElementById("nodePosition").value = "";
-    } else {
-      alert("Please enter a value and position to add a node.");
-    }
-  }
-</script>
-
-</body>
-</html>
+         
