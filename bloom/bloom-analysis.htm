@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bloom Filter Analysis - Algorithm Learning Platform</title>
+    <style>
+        /* Add your existing CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8b400;
+        }
+
+        .content {
+            padding: 50px;
+            background-color: #f0f2f5;
+        }
+
+        .content-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .content-item h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-item p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #f8b400;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #d49a00;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Bloom Filter Analysis</h1>
+        <nav>
+            <a href="../index.htm">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="../contributors.htm">About Us</a>
+            <a href="../contacts.htm">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-item">
+            <h3>What is a Bloom Filter?</h3>
+            <p>A Bloom filter is a space-efficient probabilistic data structure used to test whether an element is a member of a set. It allows for false positives, meaning it can incorrectly report that an element is in the set, but it never produces false negatives.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>How Does it Work?</h3>
+            <p>A Bloom filter uses multiple hash functions to map elements to an array of bits. When an element is added, it is hashed by each of the functions, and the corresponding bits in the array are set to 1. To check membership, the element is hashed again, and if all the corresponding bits are set to 1, it is assumed to be in the set.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>Advantages</h3>
+            <ul>
+                <li>Space-efficient: Requires less memory than storing the actual elements.</li>
+                <li>Fast membership testing: Allows for quick checks of set membership.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>False positives: Can mistakenly indicate that an element is in the set.</li>
+                <li>No deletion: Once an element is added, it cannot be removed without risking incorrect membership queries.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Use Cases</h3>
+            <p>Bloom filters are used in various applications, including:</p>
+            <ul>
+                <li>Databases to check if an item exists before querying.</li>
+                <li>Web caching to reduce the number of cache misses.</li>
+                <li>Distributed systems for efficient data synchronization.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Conclusion</h3>
+            <p>Bloom filters provide an efficient way to handle set membership checks, especially in large datasets where memory conservation is crucial. Understanding their limitations is essential for effective implementation.</p>
+        </div>
+
+        <div class="content-item">
+            <button class="btn" onclick="window.location.href='../home/home-bloom.htm'"> Back to Home </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Algorithm Learning Platform. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>

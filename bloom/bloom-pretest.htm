@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY LEARNING Labs - Pretest</title>
+    <link rel="stylesheet" href="css_m.css">
+    <style>
+        /* Basic resets */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            padding: 10px;
+            background: #eaeaea;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling the buttons */
+        button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* No border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            display: inline-block; /* Inline-block for width/height control */
+            font-size: 16px; /* Font size */
+            margin: 20px auto; /* Margin */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+            width: 100%; /* Full width */
+        }
+
+        /* Hover effect for the buttons */
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Styling the result text */
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            text-align: center; /* Center the result text */
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../logo.png" alt="MY LEARNING Labs Logo" style="height: 50px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.htm">HOME</a></li>
+                    <li><a href="../contributors.htm">CONTRIBUTORS</a></li>
+                    <li><a href="../contacts.htm">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Pretest</h1>
+            <h2>Bloom Filter Pretest</h2>
+            <div class="content">
+                <form id="pretest-form">
+                    <ol>
+                        <li>
+                            <p>What is the main advantage of using a Bloom Filter compared to a traditional hash table?</p>
+                            <ul>
+                                <li><input type="radio" id="q1a" name="q1" value="A"><label for="q1a">A) It provides exact membership testing</label></li>
+                                <li><input type="radio" id="q1b" name="q1" value="B"><label for="q1b">B) It guarantees no false positives</label></li>
+                                <li><input type="radio" id="q1c" name="q1" value="correct"><label for="q1c">C) It is more space-efficient but may produce false positives</label></li>
+                                <li><input type="radio" id="q1d" name="q1" value="D"><label for="q1d">D) It supports dynamic resizing</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>How does a Bloom Filter handle an element that is definitely not in the set?</p>
+                            <ul>
+                                <li><input type="radio" id="q2a" name="q2" value="correct"><label for="q2a">A) It can definitely confirm the element is not in the set</label></li>
+                                <li><input type="radio" id="q2b" name="q2" value="B"><label for="q2b">B) It might return that the element is in the set</label></li>
+                                <li><input type="radio" id="q2c" name="q2" value="C"><label for="q2c">C) It always gives a false positive</label></li>
+                                <li><input type="radio" id="q2d" name="q2" value="D"><label for="q2d">D) It stores the element for future queries</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Which of the following best describes the space efficiency of a Bloom Filter?</p>
+                            <ul>
+                                <li><input type="radio" id="q3a" name="q3" value="A"><label for="q3a">A) It requires a lot of space to avoid false positives</label></li>
+                                <li><input type="radio" id="q3b" name="q3" value="correct"><label for="q3b">B) It uses minimal space but allows for some false positives</label></li>
+                                <li><input type="radio" id="q3c" name="q3" value="C"><label for="q3c">C) It uses space proportional to the number of elements</label></li>
+                                <li><input type="radio" id="q3d" name="q3" value="D"><label for="q3d">D) It uses the same space as a hash table</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>In a Bloom Filter, what is the purpose of using multiple hash functions?</p>
+                            <ul>
+                                <li><input type="radio" id="q4a" name="q4" value="A"><label for="q4a">A) To reduce the bit array size</label></li>
+                                <li><input type="radio" id="q4b" name="q4" value="B"><label for="q4b">B) To increase the probability of false positives</label></li>
+                                <li><input type="radio" id="q4c" name="q4" value="C"><label for="q4c">C) To reduce the number of hash collisions</label></li>
+                                <li><input type="radio" id="q4d" name="q4" value="correct"><label for="q4d">D) To ensure a more uniform distribution of bits in the array</label></li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <button type="button" onclick="calculateScore()">Submit</button>
+                    <div id="result"></div>
+                </form>
+
+                <!-- Back to Home button -->
+                <div class="content-item">
+                    <button class="btn" onclick="window.location.href='../home/home-bloom.htm'"> Back to Home </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2023 MY LEARNING Labs</p>
+    </footer>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = 4;
+
+            // Check answers
+            if (document.querySelector('input[name="q1"]:checked')?.value === 'correct') {
+                score++;
+            }
+            if (document.querySelector('input[name="q2"]:checked')?.value === 'correct') {
+                score++;
+            }
+            if (document.querySelector('input[name="q3"]:checked')?.value === 'correct') {
+                score++;
+            }
+            if (document.querySelector('input[name="q4"]:checked')?.value === 'correct') {
+                score++;
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `You scored ${score} out of ${totalQuestions}.`;
+        }
+    </script>
+</body>
+</html>
