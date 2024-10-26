@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning Labs - Algorithm Learning Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8b400;
+        }
+
+        /* Content Section */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+            gap: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .content-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-item h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .content-item p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .content-item .btn {
+            background-color: #f8b400;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .content-item .btn:hover {
+            background-color: #d49a00;
+            transform: translateY(-5px);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 50px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .testimonial-item {
+            margin: 20px 0;
+        }
+
+        .testimonial-item p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .testimonial-item span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Featured Courses Section */
+        .featured-courses {
+            background-color: #2a2d34;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        .featured-courses h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .featured-course-item {
+            margin: 20px 0;
+        }
+
+        .featured-course-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #f8b400;
+        }
+
+        .featured-course-item p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        /* Call-to-Action Section */
+        .call-to-action {
+            padding: 50px;
+            background-color: #f8b400;
+            text-align: center;
+        }
+
+        .call-to-action h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .call-to-action .btn {
+            background-color: white;
+            color: #2a2d34;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action .btn:hover {
+            background-color: #44474e;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-item {
+                width: 100%;
+            }
+
+            .call-to-action h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Learning Labs - Algorithm Learning Platform</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href="#video-section">Video Tutorial</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-item">
+            <h3>Bloom's Filter</h3>
+            <p>Learn about Bloom's Filter and how it helps in fast data checks.</p>
+            <button class="btn" onclick="window.location.href='./home-bloom.htm'">Learn More</button>
+        </div>
+        <div class="content-item">
+            <h3>Dijkstra's Algorithm</h3>
+            <p>Understand the shortest path algorithm used in network routing.</p>
+            <button class="btn" onclick="window.location.href='./djikstra-overview.html'">Learn More</button>
+        </div>
+        <div class="content-item">
+            <h3>Algorithm Analysis</h3>
+            <p>Here you will find an in-depth analysis of the selected algorithm. Understand the time complexity, space complexity, and real-world applications.</p>
+            <button class="btn">Read More</button>
+        </div>
+    </section>
+
+    <!-- Video Tutorial Section -->
+    <section id="video-section" class="content">
+        <div class="content-item">
+            <h3>Algorithm Video Tutorial</h3>
+            <p>Watch the video tutorial for a step-by-step explanation of the algorithm.</p>
+            <a href="https://www.example.com/video-tutorial" target="_blank"><button class="btn">Watch Video</button></a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Learners Say</h2>
+        <div class="testimonial-item">
+            <p>"Learning Labs has completely changed the way I approach learning. The courses are concise and to the point."</p>
+            <span>– Vikram, Data Scientist</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"This platform made learning algorithms so much easier!"</p>
+            <span>- Suresh, Web Developer</span>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="call-to-action">
+        <h2>Ready to Elevate Your Skills?</h2>
+        <p>Join thousands of learners and start achieving your career goals with our top-rated courses.</p>
+        <button class="btn">Get Started</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Learning Labs. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
