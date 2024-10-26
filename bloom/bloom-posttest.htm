@@ -4,148 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY LEARNING Labs - Posttest</title>
-    <link rel="stylesheet" href="css_m.css">
     <style>
         body {
-            font-family: Arial, sans-serif; /* Consistent font for body text */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Light gray background for better contrast */
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #4CAF50; /* Header color */
-            padding: 15px 0; /* Increased padding for header */
+            background-color: #4CAF50;
+            padding: 15px 0;
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Center items vertically */
+            align-items: center;
             max-width: 1200px;
-            margin: auto; /* Center the header */
+            margin: auto;
         }
 
         header .logo img {
-            height: 50px; /* Logo height */
+            height: 50px;
         }
 
         nav ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-            margin: 0; /* Remove margin */
-            display: flex; /* Horizontal list */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
         }
 
         nav ul li {
-            margin: 0 15px; /* Space between menu items */
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: white; /* White text color */
-            text-decoration: none; /* No underline */
-            font-weight: bold; /* Bold text */
-            transition: color 0.3s; /* Smooth transition for color change */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #e7e7e7; /* Light gray on hover */
+            color: #e7e7e7;
         }
 
         main {
-            max-width: 800px; /* Set max width for the main content */
-            margin: 20px auto; /* Center main content */
-            padding: 20px; /* Padding for main content */
-            background-color: #fff; /* White background for main content */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         h1, h2 {
-            color: #333; /* Dark gray color for headings */
-            text-align: center; /* Center align the headings */
-        }
-
-        .sidebar {
-            float: left; /* Float sidebar to the left */
-            width: 30%; /* Set sidebar width */
-            margin-right: 20px; /* Space between sidebar and main content */
-            background-color: #e7e7e7; /* Light gray background for sidebar */
-            border-radius: 8px; /* Rounded corners */
-            padding: 15px; /* Padding for sidebar */
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sidebar */
-        }
-
-        .sidebar ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-        }
-
-        .sidebar ul li a {
-            text-decoration: none; /* No underline */
-            color: #4CAF50; /* Green text color for sidebar links */
-            display: block; /* Full-width links */
-            padding: 8px 12px; /* Padding for links */
-            border-radius: 4px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth transition */
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #ddd; /* Change background on hover */
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         form {
-            margin-top: 20px; /* Margin for form */
+            margin-top: 20px;
         }
 
         ol {
-            margin: 0; /* Remove margin */
-            padding: 0; /* Remove padding */
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-        li {
-            margin-bottom: 15px; /* Space between questions */
+        ol li {
+            margin-bottom: 25px;
         }
 
-        /* Styling the buttons */
+        ol li p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1em;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul li label {
+            cursor: pointer;
+        }
+
         button {
-            background-color: #4CAF50; /* Green background */
-            border: none; /* No border */
-            color: white; /* White text */
-            padding: 15px 32px; /* Padding */
-            text-align: center; /* Centered text */
-            text-decoration: none; /* No underline */
-            display: inline-block; /* Inline-block for width/height control */
-            font-size: 16px; /* Font size */
-            margin: 20px auto; /* Margin */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition for hover */
-            width: 100%; /* Full width */
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            width: 100%;
         }
 
-        /* Hover effect for the buttons */
         button:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #45a049;
         }
 
-        /* Styling the result text */
         #result {
             font-size: 18px;
             font-weight: bold;
             color: #333;
             margin-top: 20px;
-            text-align: center; /* Center the score text */
+            text-align: center;
         }
 
         footer {
-            background-color: #4CAF50; /* Footer color */
-            padding: 10px 0; /* Padding for footer */
-            text-align: center; /* Center footer text */
-            color: white; /* White text */
-            position: relative; /* For footer styling */
-            bottom: 0; /* Position footer at bottom */
-            width: 100%; /* Full width footer */
+            background-color: #4CAF50;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -171,44 +167,61 @@
             <h1>Posttest</h1>
             <h2>Bloom Algorithm Posttest</h2>
             
-                <form id="posttest-form">
-                    <ol>
-                        <li>
-                            <p>What is the primary drawback of using a Bloom Filter?</p>
-                            <ul>
-                                <li><input type="radio" id="q1a" name="q1" value="A"><label for="q1a">A) It cannot handle dynamic data efficiently</label></li>
-                                <li><input type="radio" id="q1b" name="q1" value="correct"><label for="q1b">B) It may produce false positives but guarantees no false negatives</label></li>
-                                <li><input type="radio" id="q1c" name="q1" value="C"><label for="q1c">C) It requires more computational time for queries</label></li>
-                                <li><input type="radio" id="q1d" name="q1" value="D"><label for="q1d">D) It has higher memory usage compared to other data structures</label></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>How does the false positive rate of a Bloom Filter change when the size of the bit array increases?</p>
-                            <ul>
-                                <li><input type="radio" id="q2a" name="q2" value="A"><label for="q2a">A) The false positive rate increases</label></li>
-                                <li><input type="radio" id="q2b" name="q2" value="correct"><label for="q2b">B) The false positive rate decreases</label></li>
-                                <li><input type="radio" id="q2c" name="q2" value="C"><label for="q2c">C) The false positive rate remains constant</label></li>
-                                <li><input type="radio" id="q2d" name="q2" value="D"><label for="q2d">D) The false positive rate initially decreases and then increases</label></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>What is the impact of increasing the number of hash functions used in a Bloom Filter?</p>
-                            <ul>
-                                <li><input type="radio" id="q3a" name="q3" value="A"><label for="q3a">A) It increases the probability of false positives</label></li>
-                                <li><input type="radio" id="q3b" name="q3" value="B"><label for="q3b">B) It decreases the probability of false positives</label></li>
-                                <li><input type="radio" id="q3c" name="q3" value="correct"><label for="q3c">C) It first decreases and then increases the probability of false positives</label></li>
-                                <li><input type="radio" id="q3d" name="q3" value="D"><label for="q3d">D) It has no effect on the probability of false positives</label></li>
-                            </ul>
-                        </li>
-                    </ol>
-                    <button type="button" onclick="calculateScore()">Submit</button>
-                </form>
-                <div id="result"></div>
-                
-                <!-- Back to Home button -->
-                <div class="content-item">
-                    <button class="btn" onclick="window.location.href='../home/home-bloom.htm'"> Back to Home </button>
-                </div>
+            <form id="posttest-form">
+                <ol>
+                    <li>
+                        <p>What is the primary drawback of using a Bloom Filter?</p>
+                        <ul>
+                            <li><input type="radio" id="q1a" name="q1" value="A"><label for="q1a">A) It cannot handle dynamic data efficiently</label></li>
+                            <li><input type="radio" id="q1b" name="q1" value="correct"><label for="q1b">B) It may produce false positives but guarantees no false negatives</label></li>
+                            <li><input type="radio" id="q1c" name="q1" value="C"><label for="q1c">C) It requires more computational time for queries</label></li>
+                            <li><input type="radio" id="q1d" name="q1" value="D"><label for="q1d">D) It has higher memory usage compared to other data structures</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>How does the false positive rate of a Bloom Filter change when the size of the bit array increases?</p>
+                        <ul>
+                            <li><input type="radio" id="q2a" name="q2" value="A"><label for="q2a">A) The false positive rate increases</label></li>
+                            <li><input type="radio" id="q2b" name="q2" value="correct"><label for="q2b">B) The false positive rate decreases</label></li>
+                            <li><input type="radio" id="q2c" name="q2" value="C"><label for="q2c">C) The false positive rate remains constant</label></li>
+                            <li><input type="radio" id="q2d" name="q2" value="D"><label for="q2d">D) The false positive rate initially decreases and then increases</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>What is the impact of increasing the number of hash functions used in a Bloom Filter?</p>
+                        <ul>
+                            <li><input type="radio" id="q3a" name="q3" value="A"><label for="q3a">A) It increases the probability of false positives</label></li>
+                            <li><input type="radio" id="q3b" name="q3" value="B"><label for="q3b">B) It decreases the probability of false positives</label></li>
+                            <li><input type="radio" id="q3c" name="q3" value="correct"><label for="q3c">C) It first decreases and then increases the probability of false positives</label></li>
+                            <li><input type="radio" id="q3d" name="q3" value="D"><label for="q3d">D) It has no effect on the probability of false positives</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Which scenario is a Bloom Filter most suitable for?</p>
+                        <ul>
+                            <li><input type="radio" id="q4a" name="q4" value="A"><label for="q4a">A) A database system that requires exact matches</label></li>
+                            <li><input type="radio" id="q4b" name="q4" value="B"><label for="q4b">B) A cache system that needs to quickly check for existence</label></li>
+                            <li><input type="radio" id="q4c" name="q4" value="C"><label for="q4c">C) A search engine ranking algorithm</label></li>
+                            <li><input type="radio" id="q4d" name="q4" value="D"><label for="q4d">D) Sorting algorithms requiring large data comparisons</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>What is one advantage of using a Bloom Filter over a hash set?</p>
+                        <ul>
+                            <li><input type="radio" id="q5a" name="q5" value="correct"><label for="q5a">A) It has a smaller memory footprint</label></li>
+                            <li><input type="radio" id="q5b" name="q5" value="B"><label for="q5b">B) It guarantees no false positives</label></li>
+                            <li><input type="radio" id="q5c" name="q5" value="C"><label for="q5c">C) It offers faster query times</label></li>
+                            <li><input type="radio" id="q5d" name="q5" value="D"><label for="q5d">D) It can store dynamic data more effectively</label></li>
+                        </ul>
+                    </li>
+                </ol>
+                <button type="button" onclick="calculateScore()">Submit</button>
+            </form>
+            <div id="result"></div>
+            
+            <div class="content-item">
+                <button class="btn" onclick="window.location.href='../home/home-bloom.htm'"> Back to Home </button>
+            </div>
         </div>
     </main>
     
@@ -219,9 +232,8 @@
     <script>
         function calculateScore() {
             let score = 0;
-            let totalQuestions = 3;
+            let totalQuestions = 5;
 
-            // Check answers for each question
             if (document.querySelector('input[name="q1"]:checked')?.value === "correct") {
                 score++;
             }
@@ -231,8 +243,13 @@
             if (document.querySelector('input[name="q3"]:checked')?.value === "correct") {
                 score++;
             }
+            if (document.querySelector('input[name="q4"]:checked')?.value === "B") {
+                score++;
+            }
+            if (document.querySelector('input[name="q5"]:checked')?.value === "correct") {
+                score++;
+            }
 
-            // Display the score
             document.getElementById('result').innerText = `Your score: ${score} out of ${totalQuestions}`;
         }
     </script>
