@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY LEARNING Labs - Posttest</title>
+    <link rel="stylesheet" href="css_m.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Consistent font for body text */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light gray background for better contrast */
+        }
+
+        header {
+            background-color: #4CAF50; /* Header color */
+            padding: 15px 0; /* Increased padding for header */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Center items vertically */
+            max-width: 1200px;
+            margin: auto; /* Center the header */
+        }
+
+        header .logo img {
+            height: 50px; /* Logo height */
+        }
+
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Horizontal list */
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Space between menu items */
+        }
+
+        nav ul li a {
+            color: white; /* White text color */
+            text-decoration: none; /* No underline */
+            font-weight: bold; /* Bold text */
+            transition: color 0.3s; /* Smooth transition for color change */
+        }
+
+        nav ul li a:hover {
+            color: #e7e7e7; /* Light gray on hover */
+        }
+
+        main {
+            max-width: 800px; /* Set max width for the main content */
+            margin: 20px auto; /* Center main content */
+            padding: 20px; /* Padding for main content */
+            background-color: #fff; /* White background for main content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        h1, h2 {
+            color: #333; /* Dark gray color for headings */
+            text-align: center; /* Center align the headings */
+        }
+
+        .sidebar {
+            float: left; /* Float sidebar to the left */
+            width: 30%; /* Set sidebar width */
+            margin-right: 20px; /* Space between sidebar and main content */
+            background-color: #e7e7e7; /* Light gray background for sidebar */
+            border-radius: 8px; /* Rounded corners */
+            padding: 15px; /* Padding for sidebar */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sidebar */
+        }
+
+        .sidebar ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .sidebar ul li a {
+            text-decoration: none; /* No underline */
+            color: #4CAF50; /* Green text color for sidebar links */
+            display: block; /* Full-width links */
+            padding: 8px 12px; /* Padding for links */
+            border-radius: 4px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #ddd; /* Change background on hover */
+        }
+
+        form {
+            margin-top: 20px; /* Margin for form */
+        }
+
+        ol {
+            margin: 0; /* Remove margin */
+            padding: 0; /* Remove padding */
+        }
+
+        li {
+            margin-bottom: 15px; /* Space between questions */
+        }
+
+        /* Styling the buttons */
+        button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* No border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            display: inline-block; /* Inline-block for width/height control */
+            font-size: 16px; /* Font size */
+            margin: 20px auto; /* Margin */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+            width: 100%; /* Full width */
+        }
+
+        /* Hover effect for the buttons */
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Styling the result text */
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            text-align: center; /* Center the score text */
+        }
+
+        footer {
+            background-color: #4CAF50; /* Footer color */
+            padding: 10px 0; /* Padding for footer */
+            text-align: center; /* Center footer text */
+            color: white; /* White text */
+            position: relative; /* For footer styling */
+            bottom: 0; /* Position footer at bottom */
+            width: 100%; /* Full width footer */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="../logo.png" alt="MY LEARNING Labs Logo">
+                </div>
+                <ul>
+                    <li><a href="../index.htm">HOME</a></li>
+                    <li><a href="../contributors.htm">CONTRIBUTORS</a></li>
+                    <li><a href="../contacts.htm">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1>Posttest</h1>
+            <h2>Dijkstra Algorithm Posttest</h2>
+            
+                <form id="posttest-form">
+                    <ol>
+                        <li>
+                            <p>What is the primary strategy of Radix Sort?</p>
+                            <ul>
+                                <li><input type="radio" id="q1a" name="q1" value="a"><label for="q1a">A) Comparison-based sorting</label></li>
+                                <li><input type="radio" id="q1b" name="q1" value="b"><label for="q1b">B) Distribution-based sorting</label></li>
+                                <li><input type="radio" id="q1c" name="q1" value="c"><label for="q1c">C) In-place sorting</label></li>
+                                <li><input type="radio" id="q1d" name="q1" value="d"><label for="q1d">D) Merging sorted lists</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>Which of the following statements is true about Radix Sort?</p>
+                            <ul>
+                                <li><input type="radio" id="q2a" name="q2" value="a"><label for="q2a">A) It can only sort integers.</label></li>
+                                <li><input type="radio" id="q2b" name="q2" value="b"><label for="q2b">B) It is an unstable sorting algorithm.</label></li>
+                                <li><input type="radio" id="q2c" name="q2" value="c"><label for="q2c">C) It can sort strings based on lexicographical order.</label></li>
+                                <li><input type="radio" id="q2d" name="q2" value="d"><label for="q2d">D) It requires more memory than Quick Sort.</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>Radix Sort sorts numbers by processing which of the following?</p>
+                            <ul>
+                                <li><input type="radio" id="q3a" name="q3" value="a"><label for="q3a">A) The digits from the most significant to the least significant</label></li>
+                                <li><input type="radio" id="q3b" name="q3" value="b"><label for="q3b">B) The digits from the least significant to the most significant</label></li>
+                                <li><input type="radio" id="q3c" name="q3" value="c"><label for="q3c">C) The binary representations of the numbers</label></li>
+                                <li><input type="radio" id="q3d" name="q3" value="d"><label for="q3d">D) The entire number at once</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>What is the time complexity of Radix Sort when sorting n numbers with d digits?</p>
+                            <ul>
+                                <li><input type="radio" id="q4a" name="q4" value="a"><label for="q4a">A) O(n log n)</label></li>
+                                <li><input type="radio" id="q4b" name="q4" value="b"><label for="q4b">B) O(n<sup>2</sup>)</label></li>
+                                <li><input type="radio" id="q4c" name="q4" value="c"><label for="q4c">C) O(n * d)</label></li>
+                                <li><input type="radio" id="q4d" name="q4" value="d"><label for="q4d">D) O(d * log n)</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>In Radix Sort, which sorting algorithm is typically used as a subroutine for sorting digits?</p>
+                            <ul>
+                                <li><input type="radio" id="q5a" name="q5" value="a"><label for="q5a">A) Quick Sort</label></li>
+                                <li><input type="radio" id="q5b" name="q5" value="b"><label for="q5b">B) Heap Sort</label></li>
+                                <li><input type="radio" id="q5c" name="q5" value="c"><label for="q5c">C) Counting Sort</label></li>
+                                <li><input type="radio" id="q5d" name="q5" value="d"><label for="q5d">D) Merge Sort</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>Which of the following is a requirement for Radix Sort to be efficient?</p>
+                            <ul>
+                                <li><input type="radio" id="q6a" name="q6" value="a"><label for="q6a">A) The range of input data must be small.</label></li>
+                                <li><input type="radio" id="q6b" name="q6" value="b"><label for="q6b">B) The input data must be sorted initially.</label></li>
+                                <li><input type="radio" id="q6c" name="q6" value="c"><label for="q6c">C) The numbers must be positive.</label></li>
+                                <li><input type="radio" id="q6d" name="q6" value="d"><label for="q6d">D) The input data must be integers only.</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>Radix Sort can be described as a stable sort. What does "stable" mean in this context?</p>
+                            <ul>
+                                <li><input type="radio" id="q7a" name="q7" value="a"><label for="q7a">A) It uses less memory than other sorts.</label></li>
+                                <li><input type="radio" id="q7b" name="q7" value="b"><label for="q7b">B) Equal elements maintain their relative order.</label></li>
+                                <li><input type="radio" id="q7c" name="q7" value="c"><label for="q7c">C) It always produces the same output for the same input.</label></li>
+                                <li><input type="radio" id="q7d" name="q7" value="d"><label for="q7d">D) It can sort large datasets efficiently.</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>Which of the following scenarios would be best suited for using Radix Sort?</p>
+                            <ul>
+                                <li><input type="radio" id="q8a" name="q8" value="a"><label for="q8a">A) Sorting a list of floating-point numbers.</label></li>
+                                <li><input type="radio" id="q8b" name="q8" value="b"><label for="q8b">B) Sorting a small list of strings.</label></li>
+                                <li><input type="radio" id="q8c" name="q8" value="c"><label for="q8c">C) Sorting a large list of integers with a small range of values.</label></li>
+                                <li><input type="radio" id="q8d" name="q8" value="d"><label for="q8d">D) Sorting a list of complex objects.</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>What is a limitation of Radix Sort?</p>
+                            <ul>
+                                <li><input type="radio" id="q9a" name="q9" value="a"><label for="q9a">A) It cannot sort negative numbers.</label></li>
+                                <li><input type="radio" id="q9b" name="q9" value="b"><label for="q9b">B) It is not a comparison-based sort.</label></li>
+                                <li><input type="radio" id="q9c" name="q9" value="c"><label for="q9c">C) It requires additional space proportional to the input size.</label></li>
+                                <li><input type="radio" id="q9d" name="q9" value="d"><label for="q9d">D) It cannot handle large datasets.</label></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <p>Which sorting algorithm can be considered a precursor to Radix Sort?</p>
+                            <ul>
+                                <li><input type="radio" id="q10a" name="q10" value="a"><label for="q10a">A) Bucket Sort</label></li>
+                                <li><input type="radio" id="q10b" name="q10" value="b"><label for="q10b">B) Merge Sort</label></li>
+                                <li><input type="radio" id="q10c" name="q10" value="c"><label for="q10c">C) Counting Sort</label></li>
+                                <li><input type="radio" id="q10d" name="q10" value="d"><label for="q10d">D) Heap Sort</label></li>
+                            </ul>
+                        </li>
+                    </ol>
+    
+                    <button type="button" onclick="calculateScore()">Submit</button>
+                </form>
+                <div id="result"></div>
+                
+                <!-- Back to Home button -->
+                <div class="content-item">
+                    <button class="btn" onclick="window.location.href='../home/home-radix.htm'"> Back to Home </button>
+                </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2024 MY LEARNING Labs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = 10;
+    
+            // Get all answers
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const q5 = document.querySelector('input[name="q5"]:checked');
+            const q6 = document.querySelector('input[name="q6"]:checked');
+            const q7 = document.querySelector('input[name="q7"]:checked');
+            const q8 = document.querySelector('input[name="q8"]:checked');
+            const q9 = document.querySelector('input[name="q9"]:checked');
+            const q10 = document.querySelector('input[name="q10"]:checked');
+    
+            // Calculate the score based on correct answers
+            const answers = {
+                q1: "b", // Correct answer for question 1
+                q2: "c", // Correct answer for question 2
+                q3: "a", // Correct answer for question 3
+                q4: "c", // Correct answer for question 4
+                q5: "c", // Correct answer for question 5
+                q6: "a", // Correct answer for question 6
+                q7: "b", // Correct answer for question 7
+                q8: "c", // Correct answer for question 8
+                q9: "c", // Correct answer for question 9
+                q10: "a" // Correct answer for question 10
+            };
+    
+            if (q1 && q1.value === answers.q1) score++;
+            if (q2 && q2.value === answers.q2) score++;
+            if (q3 && q3.value === answers.q3) score++;
+            if (q4 && q4.value === answers.q4) score++;
+            if (q5 && q5.value === answers.q5) score++;
+            if (q6 && q6.value === answers.q6) score++;
+            if (q7 && q7.value === answers.q7) score++;
+            if (q8 && q8.value === answers.q8) score++;
+            if (q9 && q9.value === answers.q9) score++;
+            if (q10 && q10.value === answers.q10) score++;
+    
+            // Display the score
+            document.getElementById("result").textContent = "You scored " + score + "/" + totalQuestions;
+        }
+    </script>
+    
+</body>
+</html>

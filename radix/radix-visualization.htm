@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY LEARNING Labs</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+        .array-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+            height: 50px;
+        }
+        .array-element {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #1e90ff;
+            border: 1px solid #000;
+            font-weight: bold;
+            border-radius: 5px;
+            color: #fff;
+            transition: transform 0.5s ease;
+        }
+        .highlight {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .controls input, .controls button {
+            margin: 5px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="../index.htm">HOME</a></li>
+                    <li><a href="../contributors.htm">CONTRIBUTORS</a></li>
+                    <li><a href="../contacts.htm">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <h1 style="text-align: center; color: #333;">Radix Sort Visualization</h1>
+            <div class="content">
+                <div class="main-content">
+                    <h2 style="text-align: center;">Visualize Radix Sort</h2>
+                    <div class="controls">
+                        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas" />
+                        <button onclick="startSorting()">Start Sorting</button>
+                        <button onclick="pauseSorting()">Pause</button>
+                        <button onclick="resumeSorting()">Resume</button>
+                    </div>
+                    <div class="array-container" id="array"></div>
+                    <div class="explanation" id="explanation"></div>
+
+                    <script>
+                        let array = [170, 45, 75, 90, 802, 24, 2, 66];
+                        let maxDigits;
+                        let delay = 1000;
+                        let sortingPaused = false;
+                        let elementPositions = [];
+
+                        function displayArray(array) {
+                            const arrayContainer = document.getElementById('array');
+                            arrayContainer.innerHTML = '';
+                            elementPositions = [];
+
+                            array.forEach((value, index) => {
+                                const element = document.createElement('div');
+                                element.className = 'array-element';
+                                element.textContent = value;
+                                element.style.transform = `translateX(${index * 50}px)`;
+                                elementPositions.push(index * 50);
+                                arrayContainer.appendChild(element);
+                            });
+                        }
+
+                        function updateExplanation(text) {
+                            const explanation = document.getElementById('explanation');
+                            explanation.textContent = text;
+                        }
+
+                        async function pauseSort() {
+                            while (sortingPaused) {
+                                await new Promise(resolve => setTimeout(resolve, 100));
+                            }
+                        }
+
+                        function startSorting() {
+                            const arrayInput = document.getElementById('arrayInput').value;
+                            array = arrayInput ? arrayInput.split(',').map(Number) : array;
+                            maxDigits = Math.max(...array).toString().length;
+                            sortingPaused = false;
+                            displayArray(array);
+                            radixSort();
+                        }
+
+                        async function radixSort() {
+                            updateExplanation('Starting Radix Sort...');
+                            for (let digitPlace = 1; maxDigits--; digitPlace *= 10) {
+                                updateExplanation(`Sorting by digit place: ${digitPlace}`);
+                                await countingSort(array, digitPlace);
+                            }
+                            updateExplanation('Array is fully sorted!');
+                        }
+
+                        async function countingSort(arr, digitPlace) {
+                            const n = arr.length;
+                            let output = new Array(n).fill(0);
+                            let count = new Array(10).fill(0);
+
+                            for (let i = 0; i < n; i++) {
+                                let digit = Math.floor(arr[i] / digitPlace) % 10;
+                                count[digit]++;
+                            }
+
+                            for (let i = 1; i < 10; i++) {
+                                count[i] += count[i - 1];
+                            }
+
+                            for (let i = n - 1; i >= 0; i--) {
+                                let digit = Math.floor(arr[i] / digitPlace) % 10;
+                                output[count[digit] - 1] = arr[i];
+                                count[digit]--;
+                                updateArray(output);
+                                await pauseSort();
+                                await new Promise(resolve => setTimeout(resolve, delay));
+                            }
+
+                            for (let i = 0; i < n; i++) {
+                                arr[i] = output[i];
+                                updateArray(arr, i);
+                                await pauseSort();
+                                await new Promise(resolve => setTimeout(resolve, delay));
+                            }
+                        }
+
+                        function updateArray(arr) {
+                            const elements = document.querySelectorAll('.array-element');
+                            arr.forEach((value, index) => {
+                                elements[index].textContent = value;
+                                elements[index].style.transform = `translateX(${elementPositions[index]}px)`;
+                            });
+                        }
+
+                        function pauseSorting() {
+                            sortingPaused = true;
+                        }
+
+                        function resumeSorting() {
+                            sortingPaused = false;
+                        }
+
+                        displayArray(array);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Learning Labs. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Radix Sort Analysis - Algorithm Learning Platform</title>
+    <style>
+        /* Add your existing CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8b400;
+        }
+
+        .content {
+            padding: 50px;
+            background-color: #f0f2f5;
+        }
+
+        .content-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .content-item h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-item p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #f8b400;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #d49a00;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Radix Sort Analysis</h1>
+        <nav>
+            <a href="../index.htm">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="../about.htm">About Us</a>
+            <a href="../contacts.htm">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-item">
+            <h3>What is Radix Sort?</h3>
+            <p>Radix Sort is a non-comparative integer sorting algorithm that sorts data by processing individual digits. It processes each digit of the numbers from least significant to most significant or vice versa.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>How Does it Work?</h3>
+            <p>Radix Sort works by grouping numbers based on individual digit places, from the least significant digit to the most significant digit. It uses a stable sorting algorithm like Counting Sort as a subroutine to sort numbers based on each digit place.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>Advantages</h3>
+            <ul>
+                <li>Efficient for large sets of integers.</li>
+                <li>Performs well with numbers that have uniform digit lengths.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Less versatile: Only works with integers or data that can be broken down into individual digits.</li>
+                <li>May require additional memory for auxiliary arrays, especially with larger numbers.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Use Cases</h3>
+            <p>Radix Sort is widely used in applications involving:</p>
+            <ul>
+                <li>Sorting large amounts of numerical data efficiently.</li>
+                <li>Data types where elements can be treated as integers, like postal codes and phone numbers.</li>
+                <li>Natural language processing where words or phrases need to be sorted lexicographically by character codes.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Conclusion</h3>
+            <p>Radix Sort is an effective and efficient sorting algorithm for large integer datasets. However, it’s important to consider its limitations and specific use cases to implement it effectively.</p>
+        </div>
+
+        <div class="content-item">
+            <button class="btn" onclick="window.location.href='../home/home-radix.htm'"> Back to Home </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Algorithm Learning Platform. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
