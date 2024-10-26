@@ -11,7 +11,7 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
         body {
             background-color: #f0f2f5;
             color: #333;
@@ -193,8 +193,8 @@
             </div>
             <div id="visualization">
                 <p id="tableStatus">Please enter the size of the hash table to begin.</p>
-                <div id="hashCalculations"></div>
                 <div id="bitArray"></div>
+                <div id="hashCalculations"></div>
             </div>
         </div>
     </main>
@@ -212,7 +212,6 @@
         size = parseInt(inputSize.value);
         if (!isNaN(size) && size > 0) {
             bitArray = new Array(size).fill(0);
-            // Hide input size element and show the value input div
             document.getElementById("valueInputDiv").style.display = "block"; 
             document.getElementById("resetButton").style.display = "inline"; 
             document.getElementById("tableStatus").textContent = `Hash table initialized with size ${size}. Enter a value to insert or search.`;
@@ -268,21 +267,4 @@
                 <p>Search calculations for value <strong>${inputValue}</strong>:</p>
                 <p>Hash 1: Position ${h1} - <strong>${bitArray[h1] === 1 ? "Match (1)" : "No Match (0)"}</strong></p>
                 <p>Hash 2: Position ${h2} - <strong>${bitArray[h2] === 1 ? "Match (1)" : "No Match (0)"}</strong></p>
-                <p>Hash 3: Position ${h3} - <strong>${bitArray[h3] === 1 ? "Match (1)" : "No Match (0)"}</strong></p>
-                <p><strong>Search Result: ${searchResult ? "Value may be present" : "Value is not present"}</strong></p>
-            `;
-        }
-    }
-
-    function resetHashTable() {
-        bitArray.fill(0);
-        displayBitArray();
-        document.getElementById("tableStatus").textContent = "Hash table reset. Enter a new size to start again.";
-        document.getElementById("inputSize").value = '';
-        document.getElementById("valueInputDiv").style.display = "none";
-        document.getElementById("resetButton").style.display = "none";
-    }
-</script>
-
-</body>
-</html>
+                <p>Hash 3: Position ${h3} - <strong>${bitArray[h3] === 1 ? "Match (1)" : "No Match (0)"}</strong
