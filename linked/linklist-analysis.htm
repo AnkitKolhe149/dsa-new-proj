@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linked List Analysis - Algorithm Learning Platform</title>
+    <style>
+        /* Add your existing CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8b400;
+        }
+
+        .content {
+            padding: 50px;
+            background-color: #f0f2f5;
+        }
+
+        .content-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .content-item h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-item p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #f8b400;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #d49a00;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Linked List Analysis</h1>
+        <nav>
+            <a href="../index.htm">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="../about.htm">About Us</a>
+            <a href="../contact.htm">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-item">
+            <h3>What is a Linked List?</h3>
+            <p>A linked list is a linear data structure where each element is a separate object called a node. Each node contains a data field and a reference (or link) to the next node in the sequence, allowing for dynamic memory allocation.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>Types of Linked Lists</h3>
+            <p>There are several types of linked lists:</p>
+            <ul>
+                <li><strong>Single Linked List:</strong> Each node points to the next node, and the last node points to null.</li>
+                <li><strong>Doubly Linked List:</strong> Each node has two references, one to the next node and one to the previous node.</li>
+                <li><strong>Circular Linked List:</strong> The last node points back to the first node, forming a circle.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Advantages</h3>
+            <ul>
+                <li>Dynamic size: Linked lists can grow or shrink in size as needed.</li>
+                <li>Efficient insertions/deletions: Adding or removing nodes can be done without shifting elements.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Memory usage: Requires more memory than arrays due to storage of pointers.</li>
+                <li>Sequential access: Cannot access elements randomly; must be traversed sequentially.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Use Cases</h3>
+            <p>Linked lists are used in various applications, including:</p>
+            <ul>
+                <li>Implementing stacks and queues.</li>
+                <li>Dynamic memory allocation in systems.</li>
+                <li>Adjacency lists for graph representations.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Conclusion</h3>
+            <p>Linked lists are fundamental data structures that provide flexibility in memory management and efficient operations. Understanding their types and applications is essential for effective programming.</p>
+        </div>
+
+        <div class="content-item">
+            <button class="btn" onclick="window.location.href='../home/home-linklist.htm'"> Back to Home </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Algorithm Learning Platform. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>

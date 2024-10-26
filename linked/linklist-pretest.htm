@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY LEARNING Labs - Pretest</title>
+    <link rel="stylesheet" href="css_m.css">
+    <style>
+        /* Basic resets */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            padding: 10px;
+            background: #eaeaea;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling the buttons */
+        button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* No border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            display: inline-block; /* Inline-block for width/height control */
+            font-size: 16px; /* Font size */
+            margin: 20px auto; /* Margin */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+            width: 100%; /* Full width */
+        }
+
+        /* Hover effect for the buttons */
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Styling the result text */
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            text-align: center; /* Center the result text */
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../logo.png" alt="MY LEARNING Labs Logo" style="height: 50px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.htm">HOME</a></li>
+                    <li><a href="../contributors.htm">CONTRIBUTORS</a></li>
+                    <li><a href="../contacts.htm">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Pretest</h1>
+            <h2>Linked List Pretest</h2>
+            <div class="content">
+                <form id="pretest-form">
+                    <ol>
+                        <li>
+                            <p>Which of these best describes an array?</p>
+                            <ul>
+                                <li><input type="radio" id="q1a" name="q1"><label for="q1a">A) A data structure that shows a hierarchical behaviour</label></li>
+                                <li><input type="radio" id="q1b" name="q1" value="correct"><label for="q1b">B) Container of objects of similar types</label></li>
+                                <li><input type="radio" id="q1c" name="q1"><label for="q1c">C) Container of objects of mixed types</label></li>
+                                <li><input type="radio" id="q1d" name="q1"><label for="q1d">D) Which of these best describes an array?</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>What is the time complexity of insertion at any point in an array?</p>
+                            <ul>
+                                <li><input type="radio" id="q2a" name="q2"><label for="q2a">A) O(N)</label></li>
+                                <li><input type="radio" id="q2b" name="q2" value="correct"><label for="q2b">B) O(N^2)</label></li>
+                                <li><input type="radio" id="q2c" name="q2"><label for="q2c">C) O(NLogN)</label></li>
+                                <li><input type="radio" id="q2d" name="q2"><label for="q2d">D) None of these</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Pick incorrect options from the following</p>
+                            <ul>
+                                <li><input type="radio" id="q3a" name="q3"><label for="q3a">A) If structure contains 3 types of data then one pointer is sufficient for that structure</label></li>
+                                <li><input type="radio" id="q3b" name="q3" value="correct"><label for="q3b">B) One variable can be bound to many structures</label></li>
+                                <li><input type="radio" id="q3c" name="q3"><label for="q3c">C) Contents of a structure are stored in contiguous memory</label></li>
+                                <li><input type="radio" id="q3d" name="q3"><label for="q3d">D) None of these</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>The memory occupied by a pointer _______</p>
+                            <ul>
+                                <li><input type="radio" id="q4a" name="q4" value="correct"><label for="q4a">A) Is dependent on which data type the pointer points to.</label></li>
+                                <li><input type="radio" id="q4b" name="q4"><label for="q4b">B) Is independent of data type.</label></li>
+                                <li><input type="radio" id="q4c" name="q4"><label for="q4c">C) Depends on the program we are writing.</label></li>
+                                <li><input type="radio" id="q4d" name="q4"><label for="q4d">D) None of these</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>What are the advantages of a doubly linked list?</p>
+                            <ul>
+                                <li><input type="radio" id="q5a" name="q5"><label for="q5a">A) The memory required for a doubly linked list is less than a linked list</label></li>
+                                <li><input type="radio" id="q5b" name="q5" value="correct"><label for="q5b">B) Doubly linked list allows for traversing both sides.</label></li>
+                                <li><input type="radio" id="q5c" name="q5"><label for="q5c">C) Inserting an element is faster in a doubly linked list.</label></li>
+                                <li><input type="radio" id="q5d" name="q5"><label for="q5d">D) There is no advantage.</label></li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <button type="button" onclick="calculateScore()">Submit</button>
+                    <div id="result"></div>
+                </form>
+
+                <!-- Back to Home button -->
+                <div class="content-item">
+                    <button class="btn" onclick="window.location.href='../home/home-linklist.htm'"> Back to Home </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2023 MY LEARNING Labs</p>
+    </footer>
+
+    <script>
+        function calculateScore() {
+            const totalQuestions = 5;
+            let score = 0;
+    
+            // Get the values of each question
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const q5 = document.querySelector('input[name="q5"]:checked');
+    
+            // Calculate score
+            if (q1 && q1.value === 'correct') score++;
+            if (q2 && q2.value === 'correct') score++;
+            if (q3 && q3.value === 'correct') score++;
+            if (q4 && q4.value === 'correct') score++;
+            if (q5 && q5.value === 'correct') score++;
+    
+            // Display the score
+            document.getElementById('result').innerText = `Your score is ${score} out of ${totalQuestions}.`;
+        }
+    </script>
+    
+    
+</body>
+</html>
