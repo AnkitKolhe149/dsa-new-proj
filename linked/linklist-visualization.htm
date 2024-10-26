@@ -173,4 +173,41 @@
           const arrowElem = document.createElement("span");
           arrowElem.className = "arrow";
           arrowElem.innerHTML = "&#8594;";
-         
+          container.appendChild(arrowElem);
+        }
+        current = current.next;
+      }
+    }
+  }
+
+  const linkedList = new LinkedList();
+
+  function addNodeAtEnd() {
+    const value = document.getElementById("nodeValue").value;
+    if (value !== "") {
+      linkedList.append(value);
+      document.getElementById("nodeValue").value = "";
+    }
+  }
+
+  function addNodeAtFront() {
+    const value = document.getElementById("nodeValue").value;
+    if (value !== "") {
+      linkedList.prepend(value);
+      document.getElementById("nodeValue").value = "";
+    }
+  }
+
+  function addNodeAtPosition() {
+    const value = document.getElementById("nodeValue").value;
+    const position = parseInt(document.getElementById("nodePosition").value);
+    if (value !== "" && !isNaN(position)) {
+      linkedList.insertAtPosition(value, position);
+      document.getElementById("nodeValue").value = "";
+      document.getElementById("nodePosition").value = "";
+    }
+  }
+</script>
+
+</body>
+</html>
