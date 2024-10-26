@@ -199,6 +199,15 @@
                                 <li><input type="radio" id="q4d" name="q4" value="correct"><label for="q4d">D) To ensure a more uniform distribution of bits in the array</label></li>
                             </ul>
                         </li>
+                        <li>
+                            <p>What is a primary limitation of Bloom Filters?</p>
+                            <ul>
+                                <li><input type="radio" id="q5a" name="q5" value="A"><label for="q5a">A) They can only handle small datasets</label></li>
+                                <li><input type="radio" id="q5b" name="q5" value="B"><label for="q5b">B) They produce false positives but no false negatives</label></li>
+                                <li><input type="radio" id="q5c" name="q5" value="correct"><label for="q5c">C) They allow for false positives but cannot remove elements</label></li>
+                                <li><input type="radio" id="q5d" name="q5" value="D"><label for="q5d">D) They require resizing for large datasets</label></li>
+                            </ul>
+                        </li>
                     </ol>
                     <button type="button" onclick="calculateScore()">Submit</button>
                     <div id="result"></div>
@@ -219,7 +228,7 @@
     <script>
         function calculateScore() {
             let score = 0;
-            const totalQuestions = 4;
+            const totalQuestions = 5;
 
             // Check answers
             if (document.querySelector('input[name="q1"]:checked')?.value === 'correct') {
@@ -232,6 +241,9 @@
                 score++;
             }
             if (document.querySelector('input[name="q4"]:checked')?.value === 'correct') {
+                score++;
+            }
+            if (document.querySelector('input[name="q5"]:checked')?.value === 'correct') {
                 score++;
             }
 
