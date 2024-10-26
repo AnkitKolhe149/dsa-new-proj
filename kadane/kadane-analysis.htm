@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kadane's Algorithm - Algorithm Learning Platform</title>
+    <style>
+        /* Add your existing CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8b400;
+        }
+
+        .content {
+            padding: 50px;
+            background-color: #f0f2f5;
+        }
+
+        .content-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .content-item h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-item p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #f8b400;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #d49a00;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Kadane's Algorithm</h1>
+        <nav>
+            <a href="../index.htm">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="../about.htm">About Us</a>
+            <a href="../contacts.htm">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-item">
+            <h3>What is Kadane's Algorithm?</h3>
+            <p>Kadane's Algorithm is used to find the maximum sum subarray within a given array of integers (which may include negative numbers). It operates in linear time, making it an efficient solution for this problem.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>How Does it Work?</h3>
+            <p>The algorithm works by iterating through the array while maintaining the maximum sum encountered so far. It updates the sum dynamically based on whether adding the current element increases the sum or if it's better to start fresh from the current element.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>Advantages</h3>
+            <ul>
+                <li>Efficient: Operates in O(n) time, making it ideal for large datasets.</li>
+                <li>Simple: Easy to implement and understand with just a single traversal of the array.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Does not handle circular arrays (where the subarray can wrap around).</li>
+                <li>Only applicable to problems that can be modeled as a maximum sum subarray problem.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Use Cases</h3>
+            <p>Kadane's Algorithm is widely used in competitive programming and real-world scenarios like:</p>
+            <ul>
+                <li>Finding the maximum profit that can be earned by buying and selling stocks.</li>
+                <li>Used in systems that need to optimize resource allocation over a period of time.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Conclusion</h3>
+            <p>Kadane’s Algorithm is an excellent approach for solving maximum subarray sum problems in linear time. With its simple logic and efficiency, it is widely utilized in various algorithmic challenges and real-world applications.</p>
+        </div>
+
+        <div class="content-item">
+            <button class="btn" onclick="window.location.href='../home/home-kadane.htm'"> Back to Home </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Algorithm Learning Platform. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
