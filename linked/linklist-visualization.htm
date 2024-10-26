@@ -76,6 +76,7 @@
   <br><br>
   <input type="number" id="nodePosition" placeholder="Enter position" />
   <button onclick="addNodeAtPosition()">Add Node at Position</button>
+  <button onclick="removeNodeAtPosition()">Remove Node at Position</button>
 </div>
 <div id="linkedList"></div>
 <div class="error-message" id="errorMessage"></div>
@@ -93,7 +94,7 @@
   class LinkedList {
     constructor() {
       this.head = null;
-      this.size = 0; // Keep track of the list size
+      this.size = 0; // Track the list size
     }
 
     // Insert a new node at the end
@@ -123,12 +124,12 @@
 
     // Insert a node at a specific position
     insertAtPosition(value, position) {
-      const newNode = new Node(value);
       if (position < 1 || position > this.size + 1) {
         this.showError(Invalid position! Please enter a position between 1 and ${this.size + 1}.);
         return;
       }
 
+      const newNode = new Node(value);
       if (position === 1) {
         this.prepend(value);
         return;
@@ -136,7 +137,7 @@
 
       let current = this.head;
       let count = 1;
-      while (count < position - 1 && current) {
+      while (count < position - 1) {
         current = current.next;
         count++;
       }
@@ -144,6 +145,29 @@
       newNode.next = current.next;
       current.next = newNode;
       this.size++;
+      this.render();
+    }
+
+    // Remove a node at a specific position
+    removeAtPosition(position) {
+      if (position < 1 || position > this.size) {
+        this.showError(Invalid position! Please enter a position between 1 and ${this.size}.);
+        return;
+      }
+
+      if (position === 1) {
+        this.head = this.head.next;
+      } else {
+        let current = this.head;
+        let count = 1;
+        while (count < position - 1) {
+          current = current.next;
+          count++;
+        }
+        current.next = current.next.next;
+      }
+
+      this.size--;
       this.render();
     }
 
@@ -217,7 +241,17 @@
       document.getElementById("nodeValue").value = "";
       document.getElementById("nodePosition").value = "";
     } else {
-      linkedList.showError("Please enter both a value and a position to add a node.");
+      linkedList.showError("Please enter both a value and position to add a node.");
+    }
+  }
+
+  function removeNodeAtPosition() {
+    const position = document.getElementById("nodePosition").value;
+    if (position !== "") {
+      linkedList.removeAtPosition(parseInt(position));
+      document.getElementById("nodePosition").value = "";
+    } else {
+      linkedList.showError("Please enter a position to remove a node.");
     }
   }
 </script>
