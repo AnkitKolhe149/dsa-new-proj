@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dijkstra Algorithm - Algorithm Learning Platform</title>
+    <style>
+        /* Add your existing CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f8b400;
+        }
+
+        .content {
+            padding: 50px;
+            background-color: #f0f2f5;
+        }
+
+        .content-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .content-item h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-item p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #f8b400;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #d49a00;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #2a2d34;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Dijkstra's Algorithm</h1>
+        <nav>
+            <a href="../index.htm">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="../about.htm">About Us</a>
+            <a href="../contacts.htm">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-item">
+            <h3>What is Djikstra's Algorithm?</h3>
+            <p>Dijkstra's algorithm is used to find the shortest path between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>How Does it Work?</h3>
+            <p>The algorithm works by keeping track of the currently known shortest distance from each node to the source node and updates these values if it finds a shorter path. It continues this process until all nodes have been visited and the shortest path to each node is known.</p>
+        </div>
+
+        <div class="content-item">
+            <h3>Advantages</h3>
+            <ul>
+                <li>Efficient for finding the shortest path in a graph.</li>
+                <li>Works well for both directed and undirected graphs.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Cannot handle negative weights in the graph.</li>
+                <li>Not the most efficient for very large graphs with many nodes.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Use Cases</h3>
+            <p>Djikstra's algorithm is widely used in various applications, such as:</p>
+            <ul>
+                <li>Routing and navigation systems (e.g., Google Maps, GPS).</li>
+                <li>Network routing algorithms.</li>
+                <li>Optimization problems involving shortest paths.</li>
+            </ul>
+        </div>
+
+        <div class="content-item">
+            <h3>Conclusion</h3>
+            <p>Djikstra's algorithm provides a fundamental solution to the shortest path problem and is widely used in many real-world applications. Understanding its working principle helps in applying it effectively to solve optimization problems.</p>
+        </div>
+
+        <div class="content-item">
+            <button class="btn" onclick="window.location.href='../home/home-dijkstra.htm'"> Back to Home </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Algorithm Learning Platform. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
