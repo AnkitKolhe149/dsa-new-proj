@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bloom Filter Analysis - Algorithm Learning Platform</title>
     <style>
-        /* Add your existing CSS styles here */
+        /* Global Styling */
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +16,6 @@
 
         body {
             background-color: #f0f2f5;
-            font-family: 'Arial', sans-serif;
         }
 
         header {
@@ -55,12 +54,14 @@
             background-color: #f0f2f5;
         }
 
+        /* Content Box Styling */
         .content-item {
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin: 20px 0;
+            margin: 20px auto; /* Add gap between boxes */
+            max-width: 800px; /* Keeps the boxes narrower */
         }
 
         .content-item h3 {
@@ -69,10 +70,12 @@
             margin-bottom: 15px;
         }
 
-        .content-item p {
+        .content-item p,
+        .content-item ul {
             color: #666;
             margin-bottom: 15px;
             line-height: 1.6;
+            padding-left: 1em; /* Add gap for text inside boxes */
         }
 
         .btn {
@@ -117,7 +120,6 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
         <h1>Bloom Filter Analysis</h1>
         <nav>
@@ -128,7 +130,6 @@
         </nav>
     </header>
 
-    <!-- Content Section -->
     <section class="content">
         <div class="content-item">
             <h3>What is a Bloom Filter?</h3>
@@ -176,7 +177,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Algorithm Learning Platform. All rights reserved.</p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
