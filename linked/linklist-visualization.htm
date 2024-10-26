@@ -125,7 +125,7 @@
     // Insert a node at a specific position
     insertAtPosition(value, position) {
       if (position < 1 || position > this.size + 1) {
-        this.showError(Invalid position! Please enter a position between 1 and ${this.size + 1}.);
+        this.showError(`Invalid position! Please enter a position between 1 and ${this.size + 1}.`);
         return;
       }
 
@@ -151,7 +151,7 @@
     // Remove a node at a specific position
     removeAtPosition(position) {
       if (position < 1 || position > this.size) {
-        this.showError(Invalid position! Please enter a position between 1 and ${this.size}.);
+        this.showError(`Invalid position! Please enter a position between 1 and ${this.size}.`);
         return;
       }
 
