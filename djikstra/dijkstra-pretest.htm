@@ -189,62 +189,82 @@
     </footer>
 
     <script>
-        const questions = [
-            {
-                question: "What is the primary purpose of Dijkstra's Algorithm?",
-                options: [
-                    { text: "To find the maximum flow in a flow network", id: "q1a" },
-                    { text: "To find the shortest path between two nodes in a graph", id: "q1b", correct: true },
-                    { text: "To find the minimum spanning tree of a graph", id: "q1c" },
-                    { text: "To find the maximum clique in a graph", id: "q1d" }
-                ]
-            },
-            {
-                question: "What is the time complexity of Dijkstra's Algorithm?",
-                options: [
-                    { text: "O(n^2)", id: "q2a" },
-                    { text: "O(n log n)", id: "q2b", correct: true },
-                    { text: "O(n)", id: "q2c" },
-                    { text: "O(log n)", id: "q2d" }
-                ]
-            },
-            {
-                question: "What data structure is used to implement Dijkstra's Algorithm?",
-                options: [
-                    { text: "Stack", id: "q3a" },
-                    { text: "Queue", id: "q3b" },
-                    { text: "Priority Queue", id: "q3c", correct: true },
-                    { text: "Hash Table", id: "q3d" }
-                ]
-            },
-            {
-        question: "What is the primary purpose of Dijkstra's Algorithm?",
+       const questions = [
+    
+    {
+        question: "Which data structure is most commonly used to implement Dijkstra's Algorithm efficiently?",
         options: [
-            { text: "To find the maximum flow in a flow network", id: "q1a" },
-            { text: "To find the shortest path between two nodes in a graph", id: "q1b", correct: true },
-            { text: "To find the minimum spanning tree of a graph", id: "q1c" },
-            { text: "To find the maximum clique in a graph", id: "q1d" }
+            { text: "Stack", id: "q3a" },
+            { text: "Queue", id: "q3b" },
+            { text: "Priority Queue", id: "q3c", correct: true },
+            { text: "Hash Table", id: "q3d" }
         ]
     },
     {
-        question: "What is the time complexity of Dijkstra's Algorithm when using a priority queue?",
+        question: "What is the initial distance value of all nodes except the starting node in Dijkstra's Algorithm?",
         options: [
-            { text: "O(n^2)", id: "q2a" },
-            { text: "O(m + n log n)", id: "q2b", correct: true },
-            { text: "O(n)", id: "q2c" },
-            { text: "O(log n)", id: "q2d" }
+            { text: "0", id: "q4a" },
+            { text: "Infinity", id: "q4b", correct: true },
+            { text: "Negative infinity", id: "q4c" },
+            { text: "Any arbitrary value", id: "q4d" }
         ]
     },
-            {
-                question: "What is the initial value of the distance of the starting node in Dijkstra's Algorithm?",
-                options: [
-                    { text: "0", id: "q4a", correct: true },
-                    { text: "Infinity", id: "q4b" },
-                    { text: "Negative infinity", id: "q4c" },
-                    { text: "Any arbitrary value", id: "q4d" }
-                ]
-            }
-        ];
+    {
+        question: "What does Dijkstra's Algorithm assume about edge weights?",
+        options: [
+            { text: "Edges can have negative weights", id: "q5a" },
+            { text: "Edges must have non-negative weights", id: "q5b", correct: true },
+            { text: "All edges have the same weight", id: "q5c" },
+            { text: "Edges weights are ignored", id: "q5d" }
+        ]
+    },
+    {
+        question: "In Dijkstra's Algorithm, if a node is marked as 'visited', what does it mean?",
+        options: [
+            { text: "The node has been reached for the first time", id: "q6a" },
+            { text: "The shortest path to this node has been found", id: "q6b", correct: true },
+            { text: "All paths to this node have been explored", id: "q6c" },
+            { text: "The node is unreachable", id: "q6d" }
+        ]
+    },
+    {
+        question: "What will happen if Dijkstra's Algorithm is applied to a graph with negative weights?",
+        options: [
+            { text: "It will find the shortest path correctly", id: "q7a" },
+            { text: "It may give incorrect shortest path results", id: "q7b", correct: true },
+            { text: "It will ignore the negative edges", id: "q7c" },
+            { text: "It will return infinite distances for all paths", id: "q7d" }
+        ]
+    },
+    {
+        question: "What type of graphs is Dijkstra's Algorithm best suited for?",
+        options: [
+            { text: "Graphs with negative edges", id: "q8a" },
+            { text: "Graphs with non-negative edge weights", id: "q8b", correct: true },
+            { text: "Undirected graphs only", id: "q8c" },
+            { text: "Graphs with only one edge between any two nodes", id: "q8d" }
+        ]
+    },
+    {
+        question: "What property of a graph is essential for the correctness of Dijkstra's Algorithm?",
+        options: [
+            { text: "Graph must be acyclic", id: "q9a" },
+            { text: "Graph must have only positive weights", id: "q9b", correct: true },
+            { text: "Graph must be undirected", id: "q9c" },
+            { text: "Graph must be strongly connected", id: "q9d" }
+        ]
+    },
+    {
+        question: "Which operation is most critical in Dijkstra's Algorithm?",
+        options: [
+            { text: "Extracting the minimum distance node", id: "q10a", correct: true },
+            { text: "Updating the distances", id: "q10b" },
+            { text: "Adding nodes to the graph", id: "q10c" },
+            { text: "Removing visited nodes", id: "q10d" }
+        ]
+    }
+];
+
 
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
