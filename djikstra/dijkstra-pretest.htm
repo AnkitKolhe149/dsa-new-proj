@@ -137,6 +137,15 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Answer highlight styling */
+        .correct {
+            background-color: #c8e6c9; /* light green */
+        }
+
+        .incorrect {
+            background-color: #ffcccb; /* light red */
+        }
     </style>
 </head>
 
@@ -162,44 +171,7 @@
             <h2>Dijkstra Algorithm Pretest</h2>
             <div class="content">
                 <form id="pretest-form">
-                    <ol>
-                        <li>
-                            <p>What is the primary purpose of Dijkstra's Algorithm? </p>
-                            <ul>
-                                <li><input type="radio" id="q1a" name="q1"><label for="q1a">A) To find the maximum flow in a flow network </label></li>
-                                <li><input type="radio" id="q1b" name="q1"><label for="q1b">B) To find the shortest path between two nodes in a graph</label></li>
-                                <li><input type="radio" id="q1c" name="q1"><label for="q1c">C) To find the minimum spanning tree of a graph </label></li>
-                                <li><input type="radio" id="q1d" name="q1"><label for="q1d">D) To find the maximum clique in a graph </label></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>What is the time complexity of Dijkstra's Algorithm? </p>
-                            <ul>
-                                <li><input type="radio" id="q2a" name="q2"><label for="q2a">A) O(n^2) </label></li>
-                                <li><input type="radio" id="q2b" name="q2"><label for="q2b">B) O(n log n) </label></li>
-                                <li><input type="radio" id="q2c" name="q2"><label for="q2c">C) O(n) </label></li>
-                                <li><input type="radio" id="q2d" name="q2"><label for="q2d">D) O(log n) </label></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>What data structure is used to implement Dijkstra's Algorithm? </p>
-                            <ul>
-                                <li><input type="radio" id="q3a" name="q3"><label for="q3a">A) Stack </label></li>
-                                <li><input type="radio" id="q3b" name="q3"><label for="q3b">B) Queue </label></li>
-                                <li><input type="radio" id="q3c" name="q3"><label for="q3c">C) Priority Queue </label></li>
-                                <li><input type="radio" id="q3d" name="q3"><label for="q3d">D) Hash Table </label></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <p>What is the initial value of the distance of the starting node in Dijkstra's Algorithm? </p>
-                            <ul>
-                                <li><input type="radio" id="q4a" name="q4"><label for="q4a">A) 0 </label></li>
-                                <li><input type="radio" id="q4b" name="q4"><label for="q4b">B) Infinity </label></li>
-                                <li><input type="radio" id="q4c" name="q4"><label for="q4c">C) Negative infinity </label></li>
-                                <li><input type="radio" id="q4d" name="q4"><label for="q4d">D) Any arbitrary value </label></li>
-                            </ul>
-                        </li>
-                    </ol>
+                    <ol id="questions-list"></ol>
                     <button type="button" onclick="calculateScore()">Submit</button>
                     <div id="result"></div>
                 </form>
@@ -215,27 +187,117 @@
     <footer>
         <p>Copyright &copy; 2023 MY LEARNING Labs</p>
     </footer>
+
     <script>
+        const questions = [
+            {
+                question: "What is the primary purpose of Dijkstra's Algorithm?",
+                options: [
+                    { text: "To find the maximum flow in a flow network", id: "q1a" },
+                    { text: "To find the shortest path between two nodes in a graph", id: "q1b", correct: true },
+                    { text: "To find the minimum spanning tree of a graph", id: "q1c" },
+                    { text: "To find the maximum clique in a graph", id: "q1d" }
+                ]
+            },
+            {
+                question: "What is the time complexity of Dijkstra's Algorithm?",
+                options: [
+                    { text: "O(n^2)", id: "q2a" },
+                    { text: "O(n log n)", id: "q2b", correct: true },
+                    { text: "O(n)", id: "q2c" },
+                    { text: "O(log n)", id: "q2d" }
+                ]
+            },
+            {
+                question: "What data structure is used to implement Dijkstra's Algorithm?",
+                options: [
+                    { text: "Stack", id: "q3a" },
+                    { text: "Queue", id: "q3b" },
+                    { text: "Priority Queue", id: "q3c", correct: true },
+                    { text: "Hash Table", id: "q3d" }
+                ]
+            },
+            {
+        question: "What is the primary purpose of Dijkstra's Algorithm?",
+        options: [
+            { text: "To find the maximum flow in a flow network", id: "q1a" },
+            { text: "To find the shortest path between two nodes in a graph", id: "q1b", correct: true },
+            { text: "To find the minimum spanning tree of a graph", id: "q1c" },
+            { text: "To find the maximum clique in a graph", id: "q1d" }
+        ]
+    },
+    {
+        question: "What is the time complexity of Dijkstra's Algorithm when using a priority queue?",
+        options: [
+            { text: "O(n^2)", id: "q2a" },
+            { text: "O(m + n log n)", id: "q2b", correct: true },
+            { text: "O(n)", id: "q2c" },
+            { text: "O(log n)", id: "q2d" }
+        ]
+    },
+            {
+                question: "What is the initial value of the distance of the starting node in Dijkstra's Algorithm?",
+                options: [
+                    { text: "0", id: "q4a", correct: true },
+                    { text: "Infinity", id: "q4b" },
+                    { text: "Negative infinity", id: "q4c" },
+                    { text: "Any arbitrary value", id: "q4d" }
+                ]
+            }
+        ];
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function renderQuestions() {
+            shuffle(questions);
+            const questionsList = document.getElementById('questions-list');
+            questionsList.innerHTML = '';
+
+            questions.forEach((q, index) => {
+                const questionItem = document.createElement('li');
+                questionItem.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+
+                const optionsList = document.createElement('ul');
+                shuffle(q.options);
+
+                q.options.forEach(opt => {
+                    const optionItem = document.createElement('li');
+                    optionItem.innerHTML = `
+                        <input type="radio" id="${opt.id}" name="q${index + 1}">
+                        <label for="${opt.id}" data-correct="${opt.correct || false}">${opt.text}</label>
+                    `;
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionItem.appendChild(optionsList);
+                questionsList.appendChild(questionItem);
+            });
+        }
+
         function calculateScore() {
             let score = 0;
-            let totalQuestions = 4;
-    
-            // Get all answers
-            let q1 = document.querySelector('input[name="q1"]:checked');
-            let q2 = document.querySelector('input[name="q2"]:checked');
-            let q3 = document.querySelector('input[name="q3"]:checked');
-            let q4 = document.querySelector('input[name="q4"]:checked');
-    
-            // Check answers
-            if (q1 && q1.id === "q1b") score++; // Correct answer is B
-            if (q2 && q2.id === "q2b") score++; // Correct answer is B
-            if (q3 && q3.id === "q3c") score++; // Correct answer is C
-            if (q4 && q4.id === "q4a") score++; // Correct answer is A
-    
-            // Display the result
-            document.getElementById("result").textContent = "Your score: " + score + " out of " + totalQuestions;
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="q${index + 1}"]:checked`);
+                if (selectedOption) {
+                    const label = selectedOption.nextElementSibling;
+                    if (label.getAttribute("data-correct") === "true") {
+                        label.classList.add("correct");
+                        score++;
+                    } else {
+                        label.classList.add("incorrect");
+                    }
+                }
+            });
+
+            document.getElementById("result").textContent = "Your score: " + score + " out of " + questions.length;
         }
+
+        document.addEventListener("DOMContentLoaded", renderQuestions);
     </script>
-    
-   </body>
+</body>
 </html>
