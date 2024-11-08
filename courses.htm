@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning Labs - Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #34495e;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #f7f9fc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        /* Content Section */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 20px;
+        }
+
+        .content-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .content-item h3 {
+            margin: 15px 0;
+            font-size: 1.6rem;
+            color: #34495e;
+        }
+
+        .content-item p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .content-item .btn {
+            background-color: #f39c12;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .content-item .btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Animation Effects */
+        .content-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(243, 156, 18, 0.1);
+            transition: transform 0.3s ease;
+            transform: scale(0);
+            border-radius: 10px;
+        }
+
+        .content-item:hover::before {
+            transform: scale(1);
+        }
+
+        /* Call-to-Action Section */
+        .call-to-action {
+            padding: 50px 20px;
+            background-color: #f39c12;
+            text-align: center;
+            color: white;
+        }
+
+        .call-to-action h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .call-to-action .btn {
+            background-color: white;
+            color: #34495e;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action .btn:hover {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-item {
+                width: 100%;
+            }
+
+            .call-to-action h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Learning Labs - Explore Our Courses</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Courses Section -->
+    <section class="content" id="courses">
+        <div class="content-item">
+            <img src="img/development.jpg" alt="Development">
+            <h3>Web Development</h3>
+            <p>Build responsive websites and web applications with modern tools and techniques.</p>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="content-item">
+            <img src="img/dsa.jpg" alt="DSA">
+            <h3>Data Structures & Algorithms</h3>
+            <p>Master the core concepts of data organization and problem-solving strategies.</p>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="content-item">
+            <img src="img/ml.jpg" alt="ML">
+            <h3>Machine Learning</h3>
+            <p>Understand the fundamentals of machine learning and build predictive models.</p>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="content-item">
+            <img src="img/cybersecurity.jpg" alt="Cybersecurity">
+            <h3>Cybersecurity</h3>
+            <p>Learn techniques to protect systems and data in today’s digital world.</p>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="content-item">
+            <img src="img/uiux.jpg" alt="UI/UX">
+            <h3>UI/UX Design</h3>
+            <p>Create visually appealing and user-friendly interfaces for applications.</p>
+            <button class="btn">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="call-to-action">
+        <h2>Start Your Learning Journey Today!</h2>
+        <p>Unlock the full potential of our resources and enhance your career with hands-on knowledge.</p>
+        <button class="btn">Get Started</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Learning Labs. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
