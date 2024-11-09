@@ -136,9 +136,94 @@
         </div>
 
         <div class="content-item">
-            <h3>How Does it Work?</h3>
-            <p>The algorithm works by keeping track of the currently known shortest distance from each node to the source node and updates these values if it finds a shorter path. It continues this process until all nodes have been visited and the shortest path to each node is known.</p>
-        </div>
+    <h3>How Does it Work?</h3>
+    <p>Dijkstra's algorithm works by maintaining a list of distances from the starting node to all other nodes. Initially, all distances are set to infinity, except for the starting node which is set to zero. The algorithm then repeatedly selects the node with the smallest known distance, calculates the distance to each of its neighbors, and updates their distances if a shorter path is found. This process continues until the shortest paths to all nodes are known.</p>
+
+    <h4>Pseudocode</h4>
+    <pre>
+    function Dijkstra(Graph, source):
+        // Initialize distances
+        for each node in Graph:
+            distance[node] = infinity
+            previous[node] = undefined
+        distance[source] = 0
+
+        // Create priority queue and add source
+        Q = set of all nodes in Graph with their distances
+        while Q is not empty:
+            // Select node with smallest distance
+            u = node in Q with smallest distance
+            remove u from Q
+
+            // Check each neighbor v of u
+            for each neighbor v of u:
+                alt = distance[u] + length(u, v)
+                if alt < distance[v]: // Found a shorter path
+                    distance[v] = alt
+                    previous[v] = u
+
+        return distance, previous
+    </pre>
+
+    <h4>Algorithm Explanation</h4>
+    <ul>
+        <li>Initialize distances: Set the initial distance for the source node to 0 and all other nodes to infinity.</li>
+        <li>Use a priority queue to store nodes and their current shortest distance from the source node.</li>
+        <li>While the queue is not empty:
+            <ul>
+                <li>Select the node with the smallest distance (let’s call it <em>u</em>).</li>
+                <li>For each neighbor of <em>u</em>:
+                    <ul>
+                        <li>Calculate the potential new distance by adding the distance to <em>u</em> and the distance from <em>u</em> to the neighbor.</li>
+                        <li>If this new distance is shorter, update the shortest distance for that neighbor.</li>
+                    </ul>
+                </li>
+                <li>Remove <em>u</em> from the queue.</li>
+            </ul>
+        </li>
+        <li>After all nodes have been processed, the algorithm returns the shortest distances from the source to each node.</li>
+    </ul>
+
+    <p>This process guarantees the shortest path in weighted graphs without negative edges, as Dijkstra's algorithm cannot handle graphs with negative edge weights.</p>
+</div>
+        <div class="content-item">
+    <h3>Time and Space Complexity</h3>
+    <p>Dijkstra's algorithm's efficiency depends on the graph's structure and the data structures used to implement it. Let’s break down the time and space complexity based on different scenarios:</p>
+
+    <h4>Time Complexity</h4>
+    <ul>
+        <li><strong>Using an adjacency list and a binary min-heap (Priority Queue):</strong>
+            <ul>
+                <li>Finding the node with the minimum distance requires \(O(\log V)\) time, where \(V\) is the number of vertices. This operation is repeated for each vertex, resulting in \(O(V \log V)\).</li>
+                <li>Updating the distances of the neighbors involves an operation on each edge, so edge relaxations take \(O(E \log V)\), where \(E\) is the number of edges.</li>
+                <li>Overall time complexity with a binary heap is \(O((V + E) \log V)\).</li>
+            </ul>
+        </li>
+        <li><strong>Using an adjacency list and a Fibonacci heap:</strong>
+            <ul>
+                <li>Using a Fibonacci heap improves the time for finding the minimum node to \(O(1)\) and decreases the complexity of updating distances to \(O(\log V)\).</li>
+                <li>This makes the total time complexity \(O(V \log V + E)\), which is faster for dense graphs.</li>
+            </ul>
+        </li>
+        <li><strong>Summary of time complexity:</strong>
+            <ul>
+                <li><strong>Binary Heap:</strong> \(O((V + E) \log V)\)</li>
+                <li><strong>Fibonacci Heap:</strong> \(O(V \log V + E)\)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Space Complexity</h4>
+    <p>The space complexity of Dijkstra's algorithm mainly depends on the storage requirements for:</p>
+    <ul>
+        <li><strong>Graph Representation:</strong> If we use an adjacency list, the graph storage takes \(O(V + E)\) space.</li>
+        <li><strong>Distance Array:</strong> Storing the minimum distances for each vertex requires \(O(V)\) space.</li>
+        <li><strong>Priority Queue:</strong> Using a binary heap or Fibonacci heap requires additional space for the priority queue, which is \(O(V)\) in the worst case.</li>
+    </ul>
+
+    <p><strong>Overall space complexity:</strong> \(O(V + E)\) for graphs using adjacency lists, as we only store distances and queue entries in addition to the graph representation.</p>
+</div>
+
 
         <div class="content-item">
             <h3>Advantages</h3>
