@@ -73,59 +73,30 @@
             flex-direction: column;
         }
 
-        .sidebar {
-            margin-bottom: 20px;
-        }
-
-        .sidebar ul {
-            padding: 10px;
-            background: #eaeaea;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar ul li a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .sidebar ul li a:hover {
-            text-decoration: underline;
-        }
-
         /* Styling the buttons */
         button {
-            background-color: #4CAF50; /* Green background */
-            border: none; /* No border */
-            color: white; /* White text */
-            padding: 15px 32px; /* Padding */
-            text-align: center; /* Centered text */
-            text-decoration: none; /* No underline */
-            display: inline-block; /* Inline-block for width/height control */
-            font-size: 16px; /* Font size */
-            margin: 20px auto; /* Margin */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition for hover */
-            width: 100%; /* Full width */
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            width: 100%;
         }
 
-        /* Hover effect for the buttons */
         button:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #45a049;
         }
 
-        /* Styling the result text */
         #result {
             font-size: 18px;
             font-weight: bold;
             color: #333;
             margin-top: 20px;
-            text-align: center; /* Center the result text */
+            text-align: center;
         }
 
         footer {
@@ -162,58 +133,11 @@
             <h2>Kadane Algorithm Pretest</h2>
             <div class="content">
                 <form id="pretest-form">
-                    <ol>
-                                                <li>
-                                                    <p>What is the primary purpose of Kadane's Algorithm?</p>
-                                                    <ul>
-                                                        <li><input type="radio" id="q1a" name="q1"><label for="q1a">A) To find the maximum product subarray</label></li>
-                                                        <li><input type="radio" id="q1b" name="q1"><label for="q1b">B) To find the maximum sum of a non-contiguous subarray</label></li>
-                                                        <li><input type="radio" id="q1c" name="q1" value="correct"><label for="q1c">C) To find the maximum sum of a contiguous subarray</label></li>
-                                                        <li><input type="radio" id="q1d" name="q1"><label for="q1d">D) To find the minimum sum of a contiguous subarray</label></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>What should be the initial value of maximum in Kadane's Algorithm?</p>
-                                                    <ul>
-                                                        <li><input type="radio" id="q2a" name="q2"><label for="q2a">A) 0</label></li>
-                                                        <li><input type="radio" id="q2b" name="q2" value="correct"><label for="q2b">B) The first element of the array</label></li>
-                                                        <li><input type="radio" id="q2c" name="q2"><label for="q2c">C) Negative infinity</label></li>
-                                                        <li><input type="radio" id="q2d" name="q2"><label for="q2d">D) Any arbitrary value</label></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>What does Kadane's Algorithm do when the current subarray sum becomes negative?</p>
-                                                    <ul>
-                                                        <li><input type="radio" id="q3a" name="q3"><label for="q3a">A) Continues adding the next element</label></li>
-                                                        <li><input type="radio" id="q3b" name="q3" value="correct"><label for="q3b">B) Resets the sum to zero</label></li>
-                                                        <li><input type="radio" id="q3c" name="q3"><label for="q3c">C) Ends the program</label></li>
-                                                        <li><input type="radio" id="q3d" name="q3"><label for="q3d">D) Subtracts the sum from the maximum value</label></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>In which time complexity does Kadane's Algorithm operate?</p>
-                                                    <ul>
-                                                        <li><input type="radio" id="q4a" name="q4" value="correct"><label for="q4a">A) O(n)</label></li>
-                                                        <li><input type="radio" id="q4b" name="q4"><label for="q4b">B) O(n^2)</label></li>
-                                                        <li><input type="radio" id="q4c" name="q4"><label for="q4c">C) O(log n)</label></li>
-                                                        <li><input type="radio" id="q4d" name="q4"><label for="q4d">D) O(nlog n)</label></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>What is the space complexity of Kadane's Algorithm?</p>
-                                                    <ul>
-                                                        <li><input type="radio" id="q5a" name="q5"><label for="q5a">A) O(n)</label></li>
-                                                        <li><input type="radio" id="q5b" name="q5" value="correct"><label for="q5b">B) O(1)</label></li>
-                                                        <li><input type="radio" id="q5c" name="q5"><label for="q5c">C) O(log n)</label></li>
-                                                        <li><input type="radio" id="q5d" name="q5"><label for="q5d">D) O(n^2)</label></li>
-                                                    </ul>
-                                                </li>
-                                            </ol>
-                    <button type="button" onclick="calculateScore()">Submit</button>
+                    <ol id="questions-container"></ol>
+                    <button type="button" onclick="submitForm()">Submit</button>
                     <div id="result"></div>
                 </form>
-
-                <!-- Back to Home button -->
+                
                 <div class="content-item">
                     <button class="btn" onclick="window.location.href='../home/home-bloom.htm'"> Back to Home </button>
                 </div>
@@ -226,30 +150,106 @@
     </footer>
 
     <script>
-        function calculateScore() {
-            const totalQuestions = 5;
-            let score = 0;
-    
-            // Get the values of each question
-            const q1 = document.querySelector('input[name="q1"]:checked');
-            const q2 = document.querySelector('input[name="q2"]:checked');
-            const q3 = document.querySelector('input[name="q3"]:checked');
-            const q4 = document.querySelector('input[name="q4"]:checked');
-            const q5 = document.querySelector('input[name="q5"]:checked');
-    
-            // Calculate score only if all questions are answered
-            if (q1 && q2 && q3 && q4 && q5) {
-                if (q1.value === 'correct') score++;
-                if (q2.value === 'correct') score++;
-                if (q3.value === 'correct') score++;
-                if (q4.value === 'correct') score++;
-                if (q5.value === 'correct') score++;
+        const questions = [
+            {
+                question: "What is the primary purpose of Kadane's Algorithm?",
+                options: [
+                    { text: "To find the maximum product subarray", correct: false },
+                    { text: "To find the maximum sum of a non-contiguous subarray", correct: false },
+                    { text: "To find the maximum sum of a contiguous subarray", correct: true },
+                    { text: "To find the minimum sum of a contiguous subarray", correct: false }
+                ]
+            },
+            {
+                question: "What should be the initial value of maximum in Kadane's Algorithm?",
+                options: [
+                    { text: "0", correct: false },
+                    { text: "The first element of the array", correct: true },
+                    { text: "Negative infinity", correct: false },
+                    { text: "Any arbitrary value", correct: false }
+                ]
+            },
+            {
+                question: "What does Kadane's Algorithm do when the current subarray sum becomes negative?",
+                options: [
+                    { text: "Continues adding the next element", correct: false },
+                    { text: "Resets the sum to zero", correct: true },
+                    { text: "Ends the program", correct: false },
+                    { text: "Subtracts the sum from the maximum value", correct: false }
+                ]
+            },
+            {
+                question: "In which time complexity does Kadane's Algorithm operate?",
+                options: [
+                    { text: "O(n)", correct: true },
+                    { text: "O(n^2)", correct: false },
+                    { text: "O(log n)", correct: false },
+                    { text: "O(nlog n)", correct: false }
+                ]
+            },
+            {
+                question: "What is the space complexity of Kadane's Algorithm?",
+                options: [
+                    { text: "O(n)", correct: false },
+                    { text: "O(1)", correct: true },
+                    { text: "O(log n)", correct: false },
+                    { text: "O(n^2)", correct: false }
+                ]
             }
-    
-            // Display the score
-            document.getElementById('result').innerText = `Your score is ${score} out of ${totalQuestions}.`;
+        ];
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
         }
+
+        function loadQuestions() {
+            const shuffledQuestions = shuffle([...questions]).slice(0, 5);
+            const questionContainer = document.getElementById('questions-container');
+            questionContainer.innerHTML = '';
+
+            shuffledQuestions.forEach((q, index) => {
+                const questionItem = document.createElement('li');
+                questionItem.innerHTML = `
+                    <p>${q.question}</p>
+                    <ul>
+                        ${q.options.map((option, i) => `
+                            <li>
+                                <input type="radio" id="q${index}a${i}" name="q${index}" value="${option.correct}">
+                                <label for="q${index}a${i}">${option.text}</label>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                questionContainer.appendChild(questionItem);
+            });
+        }
+
+        function submitForm() {
+            const totalQuestions = document.querySelectorAll('#questions-container li').length;
+            const answers = document.querySelectorAll('#questions-container input[type="radio"]:checked');
+            const result = document.getElementById('result');
+            
+            // Check if all questions are answered
+            if (answers.length < totalQuestions) {
+                result.innerText = "Please answer all questions before submitting.";
+                result.style.color = "red";
+                return;
+            }
+
+            let score = 0;
+            answers.forEach(answer => {
+                if (answer.value === "true") score++;
+            });
+
+            result.innerText = `Your score is ${score} out of ${totalQuestions}.`;
+            result.style.color = "#333"; // Reset color to default
+        }
+
+        window.onload = loadQuestions;
     </script>
-    
 </body>
 </html>
