@@ -3,149 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY LEARNING Labs - Posttest</title>
+    <title>MY LEARNING Labs - Pretest</title>
     <link rel="stylesheet" href="css_m.css">
     <style>
-        body {
-            font-family: Arial, sans-serif; /* Consistent font for body text */
+        /* Basic resets */
+        body, h1, h2, p, ul, li {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Light gray background for better contrast */
+            list-style: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
         header {
-            background-color: #4CAF50; /* Header color */
-            padding: 15px 0; /* Increased padding for header */
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Center items vertically */
+            align-items: center;
             max-width: 1200px;
-            margin: auto; /* Center the header */
-        }
-
-        header .logo img {
-            height: 50px; /* Logo height */
+            margin: auto;
+            padding: 0 20px;
         }
 
         nav ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-            margin: 0; /* Remove margin */
-            display: flex; /* Horizontal list */
+            display: flex;
         }
 
         nav ul li {
-            margin: 0 15px; /* Space between menu items */
+            margin-left: 20px;
         }
 
         nav ul li a {
-            color: white; /* White text color */
-            text-decoration: none; /* No underline */
-            font-weight: bold; /* Bold text */
-            transition: color 0.3s; /* Smooth transition for color change */
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #e7e7e7; /* Light gray on hover */
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
         }
 
         main {
-            max-width: 800px; /* Set max width for the main content */
-            margin: 20px auto; /* Center main content */
-            padding: 20px; /* Padding for main content */
-            background-color: #fff; /* White background for main content */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         h1, h2 {
-            color: #333; /* Dark gray color for headings */
-            text-align: center; /* Center align the headings */
+            margin-bottom: 10px;
         }
 
-        .sidebar {
-            float: left; /* Float sidebar to the left */
-            width: 30%; /* Set sidebar width */
-            margin-right: 20px; /* Space between sidebar and main content */
-            background-color: #e7e7e7; /* Light gray background for sidebar */
-            border-radius: 8px; /* Rounded corners */
-            padding: 15px; /* Padding for sidebar */
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sidebar */
-        }
-
-        .sidebar ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-        }
-
-        .sidebar ul li a {
-            text-decoration: none; /* No underline */
-            color: #4CAF50; /* Green text color for sidebar links */
-            display: block; /* Full-width links */
-            padding: 8px 12px; /* Padding for links */
-            border-radius: 4px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth transition */
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #ddd; /* Change background on hover */
-        }
-
-        form {
-            margin-top: 20px; /* Margin for form */
-        }
-
-        ol {
-            margin: 0; /* Remove margin */
-            padding: 0; /* Remove padding */
-        }
-
-        li {
-            margin-bottom: 15px; /* Space between questions */
+        .content {
+            display: flex;
+            flex-direction: column;
         }
 
         /* Styling the buttons */
         button {
-            background-color: #4CAF50; /* Green background */
-            border: none; /* No border */
-            color: white; /* White text */
-            padding: 15px 32px; /* Padding */
-            text-align: center; /* Centered text */
-            text-decoration: none; /* No underline */
-            display: inline-block; /* Inline-block for width/height control */
-            font-size: 16px; /* Font size */
-            margin: 20px auto; /* Margin */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition for hover */
-            width: 100%; /* Full width */
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            margin: 20px auto;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            width: 100%;
         }
 
-        /* Hover effect for the buttons */
         button:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #45a049;
         }
 
-        /* Styling the result text */
         #result {
             font-size: 18px;
             font-weight: bold;
             color: #333;
             margin-top: 20px;
-            text-align: center; /* Center the score text */
+            text-align: center;
         }
 
         footer {
-            background-color: #4CAF50; /* Footer color */
-            padding: 10px 0; /* Padding for footer */
-            text-align: center; /* Center footer text */
-            color: white; /* White text */
-            position: relative; /* For footer styling */
-            bottom: 0; /* Position footer at bottom */
-            width: 100%; /* Full width footer */
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -153,10 +114,10 @@
 <body>
     <header>
         <div class="container">
+            <div class="logo">
+                <img src="../logo.png" alt="MY LEARNING Labs Logo" style="height: 50px;">
+            </div>
             <nav>
-                <div class="logo">
-                    <img src="../logo.png" alt="MY LEARNING Labs Logo">
-                </div>
                 <ul>
                     <li><a href="../index.htm">HOME</a></li>
                     <li><a href="../contributors.htm">CONTRIBUTORS</a></li>
@@ -165,103 +126,130 @@
             </nav>
         </div>
     </header>
-    
+
     <main>
         <div class="container">
-            <h1>Posttest</h1>
-            <h2>Bloom's Algorithm Posttest</h2>
-            
-                <form id="posttest-form">
-                    <ol>
-                         <li>
-                        <p>What is the primary purpose of Kadane's Algorithm?</p>
-                         <ul>
-                         <li><input type="radio" id="q1a" name="q1" value="A"><label for="q1a">A) Find the maximum product of a subarray</label></li>
-                        <li><input type="radio" id="q1b" name="q1" value="correct"><label for="q1b">B) Find the maximum sum of a contiguous subarray</label></li>
-                         <li><input type="radio" id="q1c" name="q1" value="C"><label for="q1c">C) Sort an array in ascending order</label></li>
-                         <li><input type="radio" id="q1d" name="q1" value="D"><label for="q1d">D) Find the minimum sum of a subarray</label></li>
-                        </ul>
-                        </li>
-                         <li>
-                         <p>What is the initial value of the maximum variable in Kadane's Algorithm?</p>
-                        <ul>
-                        <li><input type="radio" id="q2a" name="q2" value="A"><label for="q2a">A) 0</label></li>
-                        <li><input type="radio" id="q2b" name="q2" value="correct"><label for="q2b">B) arr[0]</label></li>
-                      <li><input type="radio" id="q2c" name="q2" value="C"><label for="q2c">C) INT_MIN</label></li>
-                        <li><input type="radio" id="q2d" name="q2" value="D"><label for="q2d">D) arr[size-1]</label></li>
-                       </ul>
-                         </li>
-                        <li>
-                        <p>What does Kadane's Algorithm do when the current subarray sum becomes negative?</p>
-                         <ul>
-                       <li><input type="radio" id="q3a" name="q3" value="A"><label for="q3a">A) Continue adding the next element</label></li>
-                        <li><input type="radio" id="q3b" name="q3" value="correct"><label for="q3b">B) Reset the sum to 0</label></li>
-                         <li><input type="radio" id="q3c" name="q3" value="C"><label for="q3c">C) Return the sum</label></li>
-                         <li><input type="radio" id="q3d" name="q3" value="D"><label for="q3d">D) Subtract the negative value from the sum</label></li>
-                         </ul>
-                        </li>
-                        <li>
-                         <p>Which of the following time complexities best describes Kadane's Algorithm?</p>
-                        <ul>
-                        <li><input type="radio" id="q4a" name="q4" value="A"><label for="q4a">A) O(n^2)</label></li>
-                         <li><input type="radio" id="q4b" name="q4" value="correct"><label for="q4b">B) O(n)</label></li>
-                        <li><input type="radio" id="q4c" name="q4" value="C"><label for="q4c">C) O(log n)</label></li>
-                         <li><input type="radio" id="q4d" name="q4" value="D"><label for="q4d">D) O(nlog n)</label></li>
-                         </ul>
-                        </li>
-                        <li>
-                         <p>What is the key concept used in Kadane's Algorithm to build the solution?</p>
-                         <ul>
-                        <li><input type="radio" id="q5a" name="q5" value="A"><label for="q5a">A) Dynamic Programming</label></li>
-                        <li><input type="radio" id="q5b" name="q5" value="B"><label for="q5b">B) Greedy Algorithm</label></li>
-                        <li><input type="radio" id="q5c" name="q5" value="correct"><label for="q5c">C) Divide and Conquer</label></li>
-                        <li><input type="radio" id="q5d" name="q5" value="D"><label for="q5d">D) Backtracking</label></li>
-                        </ul>
-                         </li>
-                        </ol>
-                    <button type="button" onclick="calculateScore()">Submit</button>
+            <h1>Pretest</h1>
+            <h2>Kadane Algorithm Pretest</h2>
+            <div class="content">
+                <form id="pretest-form">
+                    <ol id="questions-container"></ol>
+                    <button type="button" onclick="submitForm()">Submit</button>
+                    <div id="result"></div>
                 </form>
-                <div id="result"></div>
                 
-                <!-- Back to Home button -->
                 <div class="content-item">
                     <button class="btn" onclick="window.location.href='../home/home-bloom.htm'"> Back to Home </button>
                 </div>
+            </div>
         </div>
     </main>
-    
+
     <footer>
-        <p>© 2024 MY LEARNING Labs. All rights reserved.</p>
+        <p>Copyright &copy; 2023 MY LEARNING Labs</p>
     </footer>
-    
-        <script>
-                function calculateScore() {
-                    const totalQuestions = 5;
-                    let score = 0;
-        
-                    // Get the values of each question
-                    const q1 = document.querySelector('input[name="q1"]:checked');
-                    const q2 = document.querySelector('input[name="q2"]:checked');
-                    const q3 = document.querySelector('input[name="q3"]:checked');
-                    const q4 = document.querySelector('input[name="q4"]:checked');
-                    const q5 = document.querySelector('input[name="q5"]:checked');
-        
-                    // Check if all questions are answered
-                    if (!q1 || !q2 || !q3 || !q4 || !q5) {
-                        alert("Please answer all questions before submitting.");
-                        return;
-                    }
-        
-                    // Calculate score
-                    if (q1.value === 'correct') score++;
-                    if (q2.value === 'correct') score++;
-                    if (q3.value === 'correct') score++;
-                    if (q4.value === 'correct') score++;
-                    if (q5.value === 'correct') score++;
-        
-                    // Display the score
-                    document.getElementById('result').innerText = `Your score is ${score} out of ${totalQuestions}.`;
-                }
-            </script>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the primary purpose of Kadane's Algorithm?",
+                options: [
+                    { text: "To find the maximum product subarray", correct: false },
+                    { text: "To find the maximum sum of a non-contiguous subarray", correct: false },
+                    { text: "To find the maximum sum of a contiguous subarray", correct: true },
+                    { text: "To find the minimum sum of a contiguous subarray", correct: false }
+                ]
+            },
+            {
+                question: "What should be the initial value of maximum in Kadane's Algorithm?",
+                options: [
+                    { text: "0", correct: false },
+                    { text: "The first element of the array", correct: true },
+                    { text: "Negative infinity", correct: false },
+                    { text: "Any arbitrary value", correct: false }
+                ]
+            },
+            {
+                question: "What does Kadane's Algorithm do when the current subarray sum becomes negative?",
+                options: [
+                    { text: "Continues adding the next element", correct: false },
+                    { text: "Resets the sum to zero", correct: true },
+                    { text: "Ends the program", correct: false },
+                    { text: "Subtracts the sum from the maximum value", correct: false }
+                ]
+            },
+            {
+                question: "In which time complexity does Kadane's Algorithm operate?",
+                options: [
+                    { text: "O(n)", correct: true },
+                    { text: "O(n^2)", correct: false },
+                    { text: "O(log n)", correct: false },
+                    { text: "O(nlog n)", correct: false }
+                ]
+            },
+            {
+                question: "What is the space complexity of Kadane's Algorithm?",
+                options: [
+                    { text: "O(n)", correct: false },
+                    { text: "O(1)", correct: true },
+                    { text: "O(log n)", correct: false },
+                    { text: "O(n^2)", correct: false }
+                ]
+            }
+        ];
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function loadQuestions() {
+            const shuffledQuestions = shuffle([...questions]).slice(0, 5);
+            const questionContainer = document.getElementById('questions-container');
+            questionContainer.innerHTML = '';
+
+            shuffledQuestions.forEach((q, index) => {
+                const questionItem = document.createElement('li');
+                questionItem.innerHTML = `
+                    <p>${q.question}</p>
+                    <ul>
+                        ${q.options.map((option, i) => `
+                            <li>
+                                <input type="radio" id="q${index}a${i}" name="q${index}" value="${option.correct}">
+                                <label for="q${index}a${i}">${option.text}</label>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                questionContainer.appendChild(questionItem);
+            });
+        }
+
+        function submitForm() {
+            const totalQuestions = document.querySelectorAll('#questions-container li').length;
+            const answers = document.querySelectorAll('#questions-container input[type="radio"]:checked');
+            const result = document.getElementById('result');
+            
+            // Check if all questions are answered
+            if (answers.length < totalQuestions) {
+                result.innerText = "Please answer all questions before submitting.";
+                result.style.color = "red";
+                return;
+            }
+
+            let score = 0;
+            answers.forEach(answer => {
+                if (answer.value === "true") score++;
+            });
+
+            result.innerText = `Your score is ${score} out of ${totalQuestions}.`;
+            result.style.color = "#333"; // Reset color to default
+        }
+
+        window.onload = loadQuestions;
+    </script>
 </body>
 </html>
